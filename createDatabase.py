@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import sqlite3 as lite
+import MySQLdb
+
 
 def create():
     livres = (
@@ -27,39 +28,42 @@ def create():
     )
 
 
-    con = lite.connect('TP2.db')
+    db = MySQLdb.connect("localhost","root","","tp2DB")
 
-    with con:
+    cur = db.cursor()
 
-        cur = con.cursor()
+    cur.execute("DROP TABLE IF EXISTS Book")
+    cur.execute("CREATE TABLE Book "
+                "(ISBN INT PRIMARY KEY NOT NULL, "
+                "title VARCHAR(255) NOT NULL,"
+                "year INT(4),"
+                "edition INT(2))")
 
-        cur.execute("DROP TABLE IF EXISTS Membres")
-        cur.execute("CREATE TABLE Membres "
-                    "(nomMembre TEXT UNIQUE NOT NULL, "
-                    "numTelephone TEXT NOT NULL,"
-                    "PRIMARY KEY (nomMembre))")
+    cur.executemany("INSERT INTO Membres VALUES(?, ?)", membres)
 
-        cur.executemany("INSERT INTO Membres VALUES(?, ?)", membres)
+    cur.execute("DROP TABLE IF EXISTS Book_copy")
+    cur.execute("CREATE TABLE Book_copy "
+                "(copyNo INT(4) PRIMARY KEY NOT NULL, "
+                "ISBN INT, "
+                "available BOOLEAN,"
+                "FOREIGN KEY (ISBN) REFERENCES Book(ISBN))")
 
-        cur.execute("DROP TABLE IF EXISTS Emprunts")
-        cur.execute("CREATE TABLE Emprunts "
-                    "(ISBN TEXT UNIQUE NOT NULL, "
-                    "nomMembre TEXT NOT NULL, "
-                    "dateOut DATE NOT NULL, "
-                    "dateDue DATE NOT NULL, "
-                    "disponible BOOLEAN DEFAULT 0,"
-                    "PRIMARY KEY (ISBN),"
-                    "FOREIGN KEY (nomMembre) REFERENCES Membres(nomMembre))")
+    cur.executemany("INSERT INTO Emprunts(ISBN, nomMembre, dateOut, dateDue) VALUES(?, ?, ?, ?)", emprunts)
 
-        cur.executemany("INSERT INTO Emprunts(ISBN, nomMembre, dateOut, dateDue) VALUES(?, ?, ?, ?)", emprunts)
+    cur.execute("DROP TABLE IF EXISTS Borrower")
+    cur.execute("CREATE TABLE Borrower "
+                "(borrowerNO INT PRIMARY KEY NOT NULL, "
+                "borrowerName VARCHAR(255) NOT NULL, "
+                "borrowerAddress VARCHAR(255))")
 
-        cur.execute("DROP TABLE IF EXISTS Livres")
-        cur.execute("CREATE TABLE Livres "
-                    "(idLivre INTEGER PRIMARY KEY, "
-                    "nomLivre TEXT NOT NULL, "
-                    "nomAuteur TEXT NOT NULL, "
-                    "ISBN TEXT NOT NULL, "
-                    "datePublication DATE NOT NULL,"
-                    "FOREIGN KEY (ISBN) REFERENCES Emprunts(ISBN))")
+    cur.executemany("INSERT INTO Livres(nomLivre, nomAuteur, ISBN, datePublication) VALUES(?, ?, ?, ?)", livres)
 
-        cur.executemany("INSERT INTO Livres(nomLivre, nomAuteur, ISBN, datePublication) VALUES(?, ?, ?, ?)", livres)
+    cur.execute("DROP TABLE IF EXISTS BookLoan")
+    cur.execute("CREATE TABLE BookLoan "
+                "(copyNo INT(4) NOT NULL, "
+                "dateOut DATE PRIMARY KEY, "
+                "dateDue DATE,"
+                "borrowerNo INT(4),"
+                "FOREIGN KEY (borrowerNo) REFERENCES Borrower(borrowerNO))")
+
+    cur.executemany("INSERT INTO Livres(nomLivre, nomAuteur, ISBN, datePublication) VALUES(?, ?, ?, ?)", livres)

@@ -1,6 +1,7 @@
 import createDatabase #Création de la base de donnée.
 import addContent #Fonctions permettant l'ajout de contenu.
 import giveContent #Fonctions permettant de récupérer du contenu.
+import MySQLdb
 
 def displayMenu():
     print("Choisissez l'option qui vous convient:\n"
@@ -49,3 +50,43 @@ elif choix == "6":
 elif choix == "9":
     createDatabase.create()
     print("La base de donnée a été créé.\n")
+
+
+"""
+    09:32:40 use tp2DB
+09:32:41 CREATE TABLE tp2DB.Book
+         (
+         ISBN INT PRIMARY KEY NOT NULL,
+         title VARCHAR(255) NOT NULL,
+         year INT(4),
+         edition INT(2)
+         )
+09:32:41 CREATE UNIQUE INDEX Book_ISBN_uindex ON tp2DB.Book (ISBN)
+09:37:20 use tp2DB
+09:37:20 CREATE TABLE tp2DB.Book_copy
+         (
+         copyNo INT(4) PRIMARY KEY NOT NULL,
+         ISBN INT,
+         available BOOLEAN,
+         FOREIGN KEY (ISBN) REFERENCES Book(ISBN)
+         )
+09:41:12 use tp2DB
+09:41:12 CREATE TABLE tp2DB.Borrower
+         (
+         borrowerNO INT PRIMARY KEY NOT NULL,
+         borrowerName VARCHAR(255) NOT NULL,
+         borrowerAddress VARCHAR(255)
+         )
+09:41:13 CREATE UNIQUE INDEX Borrower_borrowerNO_uindex ON tp2DB.Borrower (borrowerNO)
+09:44:46 use tp2DB
+09:44:46 CREATE TABLE tp2DB.BookLoan
+         (
+         copyNo INT(4) NOT NULL,
+         dateOut DATE PRIMARY KEY,
+         dateDue DATE,
+         borrowerNo INT(4),
+         FOREIGN KEY (borrowerNo) REFERENCES Borrower(borrowerNO)
+         )
+
+pip3 install JayDeBeApi3 ou pip install JayDeBeApi3
+"""
