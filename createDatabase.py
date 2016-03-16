@@ -2,68 +2,88 @@
 # -*- coding: utf-8 -*-
 import MySQLdb
 
-
 def create():
-    livres = (
-        ('Harry Potter à l\'UQAC', 'Daelhi Nadeau-Otis', '1111', "2011-08-30"),
-        ('Harry Potter à l\'UQAC', 'Daelhi Nadeau-Otis', '1112', "2011-08-30"),
-        ('Chad, mon incroyable vie', 'Chad Coup-Fabiano', '1121', "2013-11-30"),
-        ('James le chien', 'Gillian Chaville', '1131', "2014-12-30"),
-        ('Le bon loup', 'Daelhi Nadeau-Otis', '1141', "2000-11-30"),
-        ('Titre de livre absent', 'Gillian Chaville ', '1151', "2003-11-30"),
-        ('Je suis gentil', 'Marilou St-Gelais', '1161', "1999-06-30")
-    )
-
-    emprunts = (
-        ('1111', 'Bob Le Bricoleur', '2016-03-09', '2016-03-23'),
-        ('1121', 'Joey Jeremiah', '2016-03-01', '2016-03-05'),
-        ('1161', 'Donald Trump', '2016-03-08', '2016-03-23'),
-    )
-
-    membres = (
-        ('Bob Le Bricoleur', '4185347965'),
-        ('Joey Jeremiah', '4183439696'),
-        ('Donald Trump', '4184353877'),
-        ('Leonardo Dicaprio', '4185436452'),
-    )
 
 
-    db = MySQLdb.connect("localhost","root","","tp2DB")
+    db = MySQLdb.connect("localhost","root","","tp2DB",local_infile = 1)
 
     cur = db.cursor()
 
-    cur.execute("DROP TABLE IF EXISTS Book")
+
+
+    cur.execute("SET FOREIGN_KEY_CHECKS=0") # Il ne regarde plus les foreigh_key
+
+    cur.execute("DROP TABLE IF EXISTS Book Cascade")
     cur.execute("CREATE TABLE Book "
                 "(ISBN INT PRIMARY KEY NOT NULL, "
                 "title VARCHAR(255) NOT NULL,"
                 "year INT(4),"
                 "edition INT(2))")
 
-    cur.executemany("INSERT INTO Membres VALUES(?, ?)", membres)
+    cur.execute("LOAD DATA LOCAL INFILE 'Data/Book.csv'"
+                    "INTO TABLE Book "
+                    "FIELDS TERMINATED BY ','"
+                    "ENCLOSED BY '\"'"
+                    "LINES TERMINATED BY '\n'"
+                    "(ISBN, title, year, edition)")
+    print("Book est crée et remplir\n")
 
-    cur.execute("DROP TABLE IF EXISTS Book_copy")
-    cur.execute("CREATE TABLE Book_copy "
-                "(copyNo INT(4) PRIMARY KEY NOT NULL, "
-                "ISBN INT, "
-                "available BOOLEAN,"
-                "FOREIGN KEY (ISBN) REFERENCES Book(ISBN))")
-
-    cur.executemany("INSERT INTO Emprunts(ISBN, nomMembre, dateOut, dateDue) VALUES(?, ?, ?, ?)", emprunts)
-
-    cur.execute("DROP TABLE IF EXISTS Borrower")
+    cur.execute("DROP TABLE IF EXISTS Borrower CASCADE ")
     cur.execute("CREATE TABLE Borrower "
                 "(borrowerNO INT PRIMARY KEY NOT NULL, "
                 "borrowerName VARCHAR(255) NOT NULL, "
                 "borrowerAddress VARCHAR(255))")
 
-    cur.executemany("INSERT INTO Livres(nomLivre, nomAuteur, ISBN, datePublication) VALUES(?, ?, ?, ?)", livres)
 
-    cur.execute("DROP TABLE IF EXISTS BookLoan")
+    cur.execute("LOAD DATA LOCAL INFILE 'Data/Borrower.csv'"
+                "INTO TABLE Borrower "
+                "FIELDS TERMINATED BY ','"
+                "ENCLOSED BY '\"'"
+                "LINES TERMINATED BY '\n'"
+                "(borrowerNO, borrowerName, BorrowerAddress)")
+
+    print("Borrower est crée et remplir\n")
+
+
+    cur.execute("DROP TABLE IF EXISTS BookLoan CASCADE ")
     cur.execute("CREATE TABLE BookLoan "
                 "(copyNo INT(4) NOT NULL, "
-                "dateOut DATE PRIMARY KEY, "
+                "dateOut DATE , "
                 "dateDue DATE,"
                 "borrowerNo INT(4),"
+                "PRIMARY KEY (copyNo,dateOut),"
                 "FOREIGN KEY (borrowerNo) REFERENCES Borrower(borrowerNO))")
 
-    cur.executemany("INSERT INTO Livres(nomLivre, nomAuteur, ISBN, datePublication) VALUES(?, ?, ?, ?)", livres)
+
+    sql =   "LOAD DATA LOCAL INFILE 'Data/BookLoan.csv'"\
+        "INTO TABLE BookLoan "\
+        "FIELDS TERMINATED BY \',\'"\
+        "ENCLOSED BY '\"'"\
+        "LINES TERMINATED BY '\n'"\
+        "(copyNo , dateOut, dateDue,borrowerNo)"
+
+    print("BookLoand est crée et remplir\n")
+
+    cur.execute(sql)
+
+
+
+
+    cur.execute("DROP TABLE IF EXISTS Book_copy CASCADE ")
+    cur.execute("CREATE TABLE Book_copy "
+                "(copyNo INT(4) PRIMARY KEY NOT NULL, "
+                "ISBN INT, "
+                "available VARCHAR(5) DEFAULT TRUE ,"
+                "FOREIGN KEY (ISBN) REFERENCES Book(ISBN))")
+
+    cur.execute("LOAD DATA LOCAL INFILE 'Data/BookCopy.csv'"
+                "INTO TABLE Book_copy "
+                "FIELDS TERMINATED BY ','"
+                "ENCLOSED BY '\"'"
+                "LINES TERMINATED BY '\n'"
+                "(copyNo, ISBN, available)")
+
+    print("Book_copy est crée et remplir\n")
+    cur.execute("SET FOREIGN_KEY_CHECKS=1")
+
+
