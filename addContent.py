@@ -56,3 +56,5 @@ def ajouterEmprunt():
     #Faire la condition où on ne peut sortir un livre qui n'existe pas.
     #Faire la condition où on ne peut sortir un livre pour un abonné qui n'existe pas.
     #Faire la condition où on ne peut sortir un livre qui est déjà sorti.
+
+###
