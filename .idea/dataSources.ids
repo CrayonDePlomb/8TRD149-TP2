@@ -8,6 +8,96 @@
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
       <schema id="1" name="tp2db"/>
+      <table id="2" parent="1" name="book"/>
+      <table id="3" parent="1" name="book_copy"/>
+      <table id="4" parent="1" name="bookloan"/>
+      <table id="5" parent="1" name="borrower"/>
+      <column id="6" parent="2" name="ISBN">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="7" parent="2" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="8" parent="2" name="year">
+        <data-type>int(4)</data-type>
+      </column>
+      <column id="9" parent="2" name="edition">
+        <data-type>int(2)</data-type>
+      </column>
+      <key id="10" parent="2" name="PRIMARY">
+        <columns>ISBN</columns>
+        <primary>1</primary>
+      </key>
+      <column id="11" parent="3" name="copyNo">
+        <mandatory>1</mandatory>
+        <data-type>int(4)</data-type>
+      </column>
+      <column id="12" parent="3" name="ISBN">
+        <data-type>int(4)</data-type>
+      </column>
+      <column id="13" parent="3" name="available">
+        <data-type>varchar(5)</data-type>
+      </column>
+      <index id="14" parent="3" name="ISBN">
+        <columns>ISBN</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="15" parent="3" name="PRIMARY">
+        <columns>copyNo</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="16" parent="3" name="book_copy_ibfk_1">
+        <columns>ISBN</columns>
+        <ref-key>~.book.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="17" parent="4" name="copyNo">
+        <mandatory>1</mandatory>
+        <data-type>int(4)</data-type>
+      </column>
+      <column id="18" parent="4" name="dateOut">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="19" parent="4" name="dateDue">
+        <data-type>date</data-type>
+      </column>
+      <column id="20" parent="4" name="borrowerNo">
+        <data-type>int(4)</data-type>
+      </column>
+      <index id="21" parent="4" name="borrowerNo">
+        <columns>borrowerNo</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="22" parent="4" name="PRIMARY">
+        <columns>copyNo
+dateOut</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="23" parent="4" name="bookloan_ibfk_1">
+        <columns>borrowerNo</columns>
+        <ref-key>~.borrower.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="24" parent="5" name="borrowerNO">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="25" parent="5" name="borrowerName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="26" parent="5" name="borrowerAddress">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="27" parent="5" name="PRIMARY">
+        <columns>borrowerNO</columns>
+        <primary>1</primary>
+      </key>
     </database-model>
   </data-source>
 </component>
