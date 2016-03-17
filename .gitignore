@@ -44,4 +44,4 @@ crashlytics-build.properties
 fabric.properties
 
 # Python Ignore
-__pycache__/
+__pycache__/*

@@ -3,6 +3,7 @@ import addContent #Fonctions permettant l'ajout de contenu.
 import giveContent #Fonctions permettant de récupérer du contenu.
 
 import mysql.connector
+
 from BDAction import insert
 
 def displayMenu():
@@ -16,7 +17,7 @@ def displayMenu():
           # 4- Sors la liste des livres sans le patron de recherche.
           "4: Sortir la liste des livres. \n"
           "5: Sortir la liste des exemplaires d'un livre.\n"
-          "6: Ajouter un nouvel exemplaire d'un livre..\n"
+          "6: Sortir la liste des exemplaires selon une date données\n"
           # 9- Supprime la table au complet et repart à zéro.
           "9: Supprimer la table et recommencer à zéro.\n"
           "0: Sortir du programme.\n")
@@ -47,7 +48,7 @@ elif choix == "5":
     print("Voici la liste des exemplaires du livre: \n")
 
 elif choix == "6":
-    print("Le nouvel exemplaire a été ajouté: \n")
+    insert.rechercheSelonUnedate()
 
 elif choix == "9":
     createDatabase.create()
