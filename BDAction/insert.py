@@ -49,16 +49,16 @@ def selectLivre():
         db = MySQLdb.connect("localhost","root","","tp2DB")
     livreTitre = input("Entrer un titre de livre")
 
-    sql = "Select title from Book where title = {0}".format(livreTitre)
+    sql = "Select title,copyNo from Book,Book_copy where Book.ISBN = Book_copy.ISBN and title = {0}".format(livreTitre)
     try:
         cur = db.cursor()
         cur.execute(sql)
         data = cur.fetchall()
-        nbData = cur.rowcount
 
-        for data in range(0,nbData):
-            print("Voici la liste trouver pour un titre : {0} \n".format(data))
-
+        for row in data:
+            title = row[0]
+            copyNo = row[1]
+            print("Title : {0} et Le numero de Copy : {1}".format(title,copyNo))
         db.commit()
     except:
         db.rollback()
@@ -71,9 +71,6 @@ def ajouterMembre():
 
     db = MySQLdb.connect("localhost","root","","tp2DB")
     cur = db.cursor()
-
-    if(db.close()):
-        db = MySQLdb.connect("localhost","root","","tp2DB")
     idMembre = input("Entrer un id : \n")
     nomMembre = input("Entrez le nom:\n")
     adresseMembre = input("Entrer l\'adresse de l'utilisateur\n")

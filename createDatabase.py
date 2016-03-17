@@ -25,7 +25,9 @@ def create():
                     "FIELDS TERMINATED BY ','"
                     "ENCLOSED BY '\"'"
                     "LINES TERMINATED BY '\n'"
-                    "(ISBN, title, year, edition)")
+                    "(ISBN, title, edition, year)")
+    db.commit()
+
     print("Book est crée et remplir\n")
 
     cur.execute("DROP TABLE IF EXISTS Borrower CASCADE ")
@@ -41,13 +43,15 @@ def create():
                 "ENCLOSED BY '\"'"
                 "LINES TERMINATED BY '\n'"
                 "(borrowerNO, borrowerName, BorrowerAddress)")
+    db.commit()
+
 
     print("Borrower est crée et remplir\n")
 
 
     cur.execute("DROP TABLE IF EXISTS BookLoan CASCADE ")
     cur.execute("CREATE TABLE BookLoan "
-                "(copyNo INT(4) NOT NULL, "
+                "(copyNo INT(4) NOT NULL , "
                 "dateOut DATE , "
                 "dateDue DATE,"
                 "borrowerNo INT(4),"
@@ -65,25 +69,33 @@ def create():
     print("BookLoand est crée et remplir\n")
 
     cur.execute(sql)
+    db.commit()
 
 
 
 
-    cur.execute("DROP TABLE IF EXISTS Book_copy CASCADE ")
-    cur.execute("CREATE TABLE Book_copy "
-                "(copyNo INT(4) PRIMARY KEY NOT NULL, "
-                "ISBN INT, "
-                "available VARCHAR(5) DEFAULT TRUE ,"
-                "FOREIGN KEY (ISBN) REFERENCES Book(ISBN))")
+    try:
+        cur.execute("DROP TABLE IF EXISTS Book_copy CASCADE ")
+        cur.execute("CREATE TABLE Book_copy "
+                    "(copyNo INT(4) NOT NULL AUTO_INCREMENT, "
+                    "ISBN INT(4), "
+                    "available VARCHAR(5),"
+                    "PRIMARY KEY (copyNo),"
+                    "FOREIGN KEY (ISBN) REFERENCES Book(ISBN))"
+                    )
 
-    cur.execute("LOAD DATA LOCAL INFILE 'Data/BookCopy.csv'"
-                "INTO TABLE Book_copy "
-                "FIELDS TERMINATED BY ','"
-                "ENCLOSED BY '\"'"
-                "LINES TERMINATED BY '\n'"
-                "(copyNo, ISBN, available)")
+        cur.execute("LOAD DATA LOCAL INFILE 'Data/BookCopy.csv'"
+                    "INTO TABLE Book_copy "
+                    "FIELDS TERMINATED BY ','"
+                    "ENCLOSED BY '\"'"
+                    "LINES TERMINATED BY '\n'"
+                    "(copyNo, ISBN, available)")
+        db.commit()
+    except:
+        db.rollback()
 
     print("Book_copy est crée et remplir\n")
     cur.execute("SET FOREIGN_KEY_CHECKS=1")
+    db.close()
 
 
