@@ -116,20 +116,22 @@ def selectLivre():
 def rechercheSelonUnedate():
     db = mysql.connector.connect(user="root", database="tp2DB")
     cur = db.cursor()
-    if(db.close()):
-        db = mysql.connector.connect(user="root", database="tp2DB")
-    uneDate = input("Veuillez entrer une date pour vérifier si le livre est disponible")
+    uneDate = input("Veuillez entrer une date pour vérifier si le livre est disponible(YYYY-MM-DD)\n")
 
-    sql = "SELECT * FROM BookLoan,Book_copy,Book where dateOut > {0} AND datedue < {1}".format(uneDate)
+    sql = "SELECT b.title,b.year FROM BookLoan bl,Book_copy bc,Book b where bl.dateOut < \'{0}\' " \
+          "AND bl.datedue > \'{0}\' and bl.copyNo = bc.copyNo and bc.ISBN= b.ISBN".format(uneDate)
 
     try:
         cur = db.cursor()
         cur.execute(sql)
-        date = cur.fetchall()
-        nbData = cur.rowcount
+        data = cur.fetchall()
 
-        for data in range(0,nbData):
-            print("Titre : {0} et l\'année: {1}".format(data["Book.title"],data["Book.year"]))
+        for row in data:
+            title = row[0]
+            year = row[1]
+            print("Titre : {0} et l\'année: {1}".format(title,year))
+
+        db.commit()
     except:
         db.rollback()
     db.close()

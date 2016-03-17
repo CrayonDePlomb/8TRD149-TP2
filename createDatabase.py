@@ -73,8 +73,6 @@ def create():
     db.commit()
 
 
-
-
     try:
         cur.execute("DROP TABLE IF EXISTS Book_copy CASCADE ")
         cur.execute("CREATE TABLE Book_copy "
@@ -96,6 +94,14 @@ def create():
         db.rollback()
 
     print("Book_copy est crée et remplir\n")
+
+
+    sql = "CREATE ASSERTION BorrowerNotHandlingTooMuch " \
+          "CHECK (NOT EXIST (SELECT * FROM BookLoan " \
+          "GROUP BY borrowerNo HAVING COUNT (*) > 3 ))"
+    cur.execute(sql)
+    db.commit()
+
     cur.execute("SET FOREIGN_KEY_CHECKS=1")
     db.close()
 

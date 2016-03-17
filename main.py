@@ -3,6 +3,7 @@ import addContent #Fonctions permettant l'ajout de contenu.
 import giveContent #Fonctions permettant de récupérer du contenu.
 
 import mysql.connector
+
 from BDAction import insert
 
 def displayMenu():
@@ -48,7 +49,7 @@ elif choix == "5":
     print("L\'abonné a été ajouté\n")
 
 elif choix == "6":
-    print("Le nouvel exemplaire a été ajouté: \n")
+    insert.rechercheSelonUnedate()
 
 elif choix == "7":
     insert.ajouterEmprunt()
