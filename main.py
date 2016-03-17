@@ -10,13 +10,14 @@ def displayMenu():
           # 1- Ajoute un livre sans les conditions demandés dans le devoir. Auto-incrémentation de idLivre.
           "1: Ajouter un nouveau livre.\n"
           # 2- Ajoute un nouveau membre sans les conditions demandés dans le devoir.
-          "2: Patron de recherche\n"
+          "2: Sortir la liste des livres selon un patron de recherche sur le titre.\n"
           # 3- Ajoute un nouvel emprunt sans les conditions dans le devoir. Les dates sont encore en string.
-          "3: Ajout d\'un exemplaire\n"
+          "3: Ajout d\'un nouvel exemplaire.\n"
           # 4- Sors la liste des livres sans le patron de recherche.
-          "4: Sortir la liste des livres. \n"
-          "5: Sortir la liste des exemplaires d'un livre.\n"
+          "4: Sortir la liste des exemplaires d'un livre avec le titre exact.\n"
+          "5: Ajouter un nouvel abonné.\n"
           "6: Ajouter un nouvel exemplaire d'un livre..\n"
+          "7: Ajouter un nouvel emprunt d'un livre..\n"
           # 9- Supprime la table au complet et repart à zéro.
           "9: Supprimer la table et recommencer à zéro.\n"
           "0: Sortir du programme.\n")
@@ -31,23 +32,27 @@ elif choix == "1":
     print("Le nouveau livre a été ajouté.\n")
 
 elif choix == "2":
-    insert.patronDeRecherche()
+    insert.selectLivre()
     print("Le patron de recherche est terminé \n")
 
 elif choix == "3":
     insert.ajouterExemplaire()
-    print("L\'exemplaire à été ajouté\n")
+    print("L\'exemplaire a été ajouté\n")
 
 elif choix == "4":
-    patronRecherche = input("Entrez un mot ou un titre pour rechercher le livre:\n")
-    print("Voici la liste des livres:\n")
-    giveContent.recupLivres(patronRecherche)
+     insert.selectExemplaire()
+     print("Learecherche d\'exemplaire est terminée \n")
 
 elif choix == "5":
-    print("Voici la liste des exemplaires du livre: \n")
+    insert.ajouterMembre()
+    print("L\'abonné a été ajouté\n")
 
 elif choix == "6":
     print("Le nouvel exemplaire a été ajouté: \n")
+
+elif choix == "7":
+    insert.ajouterEmprunt()
+    print("Le nouvel emprunt a été ajouté: \n")
 
 elif choix == "9":
     createDatabase.create()

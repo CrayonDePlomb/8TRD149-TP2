@@ -32,9 +32,10 @@ def create():
 
     cur.execute("DROP TABLE IF EXISTS Borrower CASCADE ")
     cur.execute("CREATE TABLE Borrower "
-                "(borrowerNO INT PRIMARY KEY NOT NULL, "
+                "(borrowerNo INT(4) NOT NULL AUTO_INCREMENT, "
                 "borrowerName VARCHAR(255) NOT NULL, "
-                "borrowerAddress VARCHAR(255))")
+                "borrowerAddress VARCHAR(255),"
+                "PRIMARY KEY (borrowerNo))")
 
 
     cur.execute("LOAD DATA LOCAL INFILE 'Data/Borrower.csv'"
@@ -79,7 +80,7 @@ def create():
         cur.execute("CREATE TABLE Book_copy "
                     "(copyNo INT(4) NOT NULL AUTO_INCREMENT, "
                     "ISBN INT(4), "
-                    "available VARCHAR(5),"
+                    "available VARCHAR(5) DEFAULT \"true\","
                     "PRIMARY KEY (copyNo),"
                     "FOREIGN KEY (ISBN) REFERENCES Book(ISBN))"
                     )

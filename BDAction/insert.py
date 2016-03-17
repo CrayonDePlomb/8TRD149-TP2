@@ -28,37 +28,45 @@ def ajouterExemplaire():
     db = mysql.connector.connect(user="root", database="tp2DB")
     cur = db.cursor()
 
-    ISBNLivre = input("Entrez le ISBN:\n")
-
-    sql = "INSERT INTO Book_copy(ISBN) VALUES ({0});".format(ISBNLivre)
-
-    try:
-        cur.execute(sql)
-        db.commit()
-
-    except:
-        db.rollback()
-
-    db.close()
+    livreTitre = input("Entrer un titre de livre \n")
+    sql = "Select ISBN from Book where title= \"{0}\"".format(livreTitre)
 
 
-def selectLivre():
-    db = mysql.connector.connect(user="root", database="tp2DB")
-    cur = db.cursor()
-    if(db.close()):
-        db = mysql.connector.connect(user="root", database="tp2DB")
-    livreTitre = input("Entrer un titre de livre")
-
-    sql = "Select title,copyNo from Book,Book_copy where Book.ISBN = Book_copy.ISBN and title = {0}".format(livreTitre)
     try:
         cur = db.cursor()
         cur.execute(sql)
         data = cur.fetchall()
 
         for row in data:
-            title = row[0]
-            copyNo = row[1]
-            print("Title : {0} et Le numero de Copy : {1}".format(title,copyNo))
+            isbn = row[0]
+            print("isbn de l'exemplaire ajouté {0}".format(isbn))
+            sql = "INSERT INTO Book_copy(ISBN) VALUES ({0});".format(isbn)
+            cur = db.cursor()
+            cur.execute(sql)
+            print("exemplaire ajouté \n")
+
+        db.commit()
+    except:
+        db.rollback()
+
+    db.close()
+
+
+def selectExemplaire():
+    db = mysql.connector.connect(user="root", database="tp2DB")
+    cur = db.cursor()
+
+    livreTitre = input("Entrer un titre de livre : \n")
+    sql = "Select copyNo from Book b ,Book_copy bc where b.ISBN = bc.ISBN and b.title = \"{0}\"".format(livreTitre)
+    try:
+        cur = db.cursor()
+        cur.execute(sql)
+        data = cur.fetchall()
+
+        print("Voici liste des exemplaires du livre \"{0}\" : ".format(livreTitre))
+        for row in data:
+            copyNo = row[0]
+            print(" - Numero de copie : {0}\n".format(copyNo))
         db.commit()
     except:
         db.rollback()
@@ -71,21 +79,20 @@ def ajouterMembre():
 
     db = mysql.connector.connect(user="root", database="tp2DB")
     cur = db.cursor()
-    idMembre = input("Entrer un id : \n")
+
     nomMembre = input("Entrez le nom:\n")
     adresseMembre = input("Entrer l\'adresse de l'utilisateur\n")
-
-    sql = "INSERT INTO Borrower VALUES ({0},{1},{2})".format(idMembre,nomMembre,adresseMembre)
-
+    sql = "INSERT INTO Borrower(borrowerName, borrowerAddress) VALUES (\"{0}\",\"{1}\")".format(nomMembre,adresseMembre)
     try:
-        cur = db.cursor()
         cur.execute(sql)
+
+        db.commit()
     except:
         db.rollback()
     db.close()
 
 
-def patronDeRecherche():
+def selectLivre():
     db = mysql.connector.connect(user="root", database="tp2DB")
     cur = db.cursor()
 
@@ -126,4 +133,26 @@ def rechercheSelonUnedate():
     except:
         db.rollback()
     db.close()
+
+def ajouterEmprunt():
+    db = mysql.connector.connect(user="root", database="tp2DB")
+    cur = db.cursor()
+
+    nomAbonne = input("Entrer le nom de l\'abonné: \n")
+    titreLivre = input("Entrer le titre du livre à emprunter: \n")
+    dateInput = input("Entrer la date de sortie de l\'emprunt: \n")
+    dateInputConvertie = datetime.datetime.strptime(dateInput, "%Y-%m-%d")
+    dateOutputConvertie = dateInputConvertie + datetime.timedelta(days=14)
+
+    sql= "INSERT INTO bookloan VALUES ((SELECT copyNo FROM Book b, book_copy bc WHERE b.ISBN = bc.ISBN AND b.title = " \
+         "\"{0}\" ORDER BY bc.copyNo LIMIT 1), \'{1}\', \'{2}\',(SELECT borrowerNo FROM borrower WHERE borrowerName =" \
+         " \"{3}\"))".format(titreLivre, dateInputConvertie.strftime("%Y-%m-%d"), dateOutputConvertie.strftime("%Y-%m-%d"), nomAbonne)
+    try:
+        cur.execute(sql)
+
+        db.commit()
+    except:
+        db.rollback()
+    db.close()
+
 

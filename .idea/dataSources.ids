@@ -39,6 +39,7 @@
       </column>
       <column id="13" parent="3" name="available">
         <data-type>varchar(5)</data-type>
+        <default-expression>&apos;true&apos;</default-expression>
       </column>
       <index id="14" parent="3" name="ISBN">
         <columns>ISBN</columns>
@@ -83,9 +84,9 @@ dateOut</columns>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="24" parent="5" name="borrowerNO">
+      <column id="24" parent="5" name="borrowerNo">
         <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
+        <data-type>int(3)</data-type>
       </column>
       <column id="25" parent="5" name="borrowerName">
         <mandatory>1</mandatory>
@@ -95,7 +96,7 @@ dateOut</columns>
         <data-type>varchar(255)</data-type>
       </column>
       <key id="27" parent="5" name="PRIMARY">
-        <columns>borrowerNO</columns>
+        <columns>borrowerNo</columns>
         <primary>1</primary>
       </key>
     </database-model>
