@@ -1,7 +1,7 @@
 import createDatabase #Création de la base de donnée.
 import addContent #Fonctions permettant l'ajout de contenu.
 import giveContent #Fonctions permettant de récupérer du contenu.
-import MySQLdb
+import mysql
 
 def displayMenu():
     print("Choisissez l'option qui vous convient:\n"
