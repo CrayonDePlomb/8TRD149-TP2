@@ -30,30 +30,24 @@ if choix == "0":
 
 elif choix == "1":
     insert.ajouterLivre()
-    print("Le nouveau livre a été ajouté.\n")
 
 elif choix == "2":
     insert.selectLivre()
-    print("Le patron de recherche est terminé \n")
 
 elif choix == "3":
     insert.ajouterExemplaire()
-    print("L\'exemplaire a été ajouté\n")
 
 elif choix == "4":
      insert.selectExemplaire()
-     print("Learecherche d\'exemplaire est terminée \n")
 
 elif choix == "5":
     insert.ajouterMembre()
-    print("L\'abonné a été ajouté\n")
 
 elif choix == "6":
     insert.rechercheSelonUnedate()
 
 elif choix == "7":
     insert.ajouterEmprunt()
-    print("Le nouvel emprunt a été ajouté: \n")
 
 elif choix == "9":
     createDatabase.create()

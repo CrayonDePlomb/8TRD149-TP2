@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1684a798-8706-4937-ada4-e7dbcbeb7ffd" name="Default" comment="Merge branch 'master' of https://github.com/CrayonDePlomb/8TRD149-TP2&#10;&#10;# Conflicts:&#10;#&#9;main.py&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BDAction/insert.py" afterPath="$PROJECT_DIR$/BDAction/insert.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/BookCopy.csv" afterPath="$PROJECT_DIR$/Data/BookCopy.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createDatabase.py" afterPath="$PROJECT_DIR$/createDatabase.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
@@ -20,7 +23,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/BDD2$cnx.coverage" NAME="cnx Coverage Results" MODIFIED="1457541376136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BDD2$main.coverage" NAME="main Coverage Results" MODIFIED="1458258259671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BDD2$main.coverage" NAME="main Coverage Results" MODIFIED="1458311006701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -52,48 +55,41 @@
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#53#0" expanded="true" />
-              </folding>
+              <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insert.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="insert.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BDAction/insert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="148" column="134" selection-start-line="148" selection-start-column="134" selection-end-line="148" selection-end-column="134" />
+            <state vertical-scroll-proportion="3.2095435">
+              <caret line="136" column="12" selection-start-line="136" selection-start-column="12" selection-end-line="136" selection-end-column="12" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-                <marker date="1458258257372" expanded="true" signature="395:439" placeholder="INSERT INTO Book... " />
-                <marker date="1458258257372" expanded="true" signature="778:820" placeholder="Select ISBN Book" />
-                <marker date="1458258257372" expanded="true" signature="1070:1110" placeholder="INSERT INTO Book_copy... " />
-                <marker date="1458258257372" expanded="true" signature="1478:1555" placeholder="Select title... Book" />
-                <marker date="1458258257372" expanded="true" signature="1478:1557" placeholder="Select title... Book" />
-                <marker date="1458258257372" expanded="true" signature="1478:1562" placeholder="Select copyN... Book" />
-                <marker date="1458258257372" expanded="true" signature="1478:1582" placeholder="Select title... Book" />
-                <marker date="1458258257372" expanded="true" signature="2175:2251" placeholder="INSERT INTO Borrower... " />
-                <marker date="1458258257372" expanded="true" signature="2562:2611" placeholder="Select title... Book" />
-                <marker date="1458258257372" expanded="true" signature="2562:3248" placeholder="Select title... Book" />
-                <marker date="1458258257372" expanded="true" signature="3248:3320" placeholder="SELECT * FRO... BookLoan" />
-                <marker date="1458258257372" expanded="true" signature="4106:4135" placeholder="INSERT INTO bookloan... " />
-                <marker date="1458258257372" expanded="true" signature="4106:4149" placeholder="INSERT INTO bookloan... " />
-                <marker date="1458258257372" expanded="true" signature="4106:4175" placeholder="INSERT INTO bookloan... " />
-                <marker date="1458258257372" expanded="true" signature="4106:4212" placeholder="INSERT INTO bookloan... " />
-                <marker date="1458258257372" expanded="true" signature="4106:4334" placeholder="INSERT INTO bookloan... " />
-                <marker date="1458258257372" expanded="true" signature="4106:4358" placeholder="INSERT INTO bookloan... " />
+                <marker date="1458310926361" expanded="true" signature="395:439" placeholder="INSERT INTO Book... " />
+                <marker date="1458310926361" expanded="true" signature="828:906" placeholder="INSERT INTO Book_copy... " />
+                <marker date="1458310926361" expanded="true" signature="863:905" placeholder="Select ISBN Book" />
+                <marker date="1458310926361" expanded="true" signature="1286:1363" placeholder="Select title... Book" />
+                <marker date="1458310926361" expanded="true" signature="1286:1365" placeholder="Select title... Book" />
+                <marker date="1458310926361" expanded="true" signature="1286:1370" placeholder="Select copyN... Book" />
+                <marker date="1458310926361" expanded="true" signature="1286:1390" placeholder="Select title... Book" />
+                <marker date="1458310926361" expanded="true" signature="2044:2120" placeholder="INSERT INTO Borrower... " />
+                <marker date="1458310926361" expanded="true" signature="2473:2522" placeholder="Select title... Book" />
+                <marker date="1458310926361" expanded="true" signature="3140:3311" placeholder="SELECT b.tit... BookLoan" />
+                <marker date="1458310926361" expanded="true" signature="4100:4374" placeholder="INSERT INTO bookloan... " />
+                <marker date="1458310926361" expanded="true" signature="4298:4372" placeholder="SELECT borro... borrower" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/eec4f7c3-71f4-43a9-829d-db5d9b125443/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26327434">
-              <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -110,6 +106,8 @@
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true">
+                <filter text="ISBN=70920498" />
+                <filter text="ISBN=11822367" />
                 <filter text="ISBN=74229475" />
               </filtering>
             </state>
@@ -127,24 +125,12 @@
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true">
+                <filter text="ISBN=11822367" />
                 <filter text="ISBN=74229475" />
                 <filter text="ISBN=Pride and Prejudice and Zombies" />
-                <filter text="ISBN=11822367" />
                 <filter text="ISBN = 11822367" />
                 <filter text="ISBN=11" />
               </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="giveContent.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/giveContent.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1458144771222" expanded="true" signature="170:222" placeholder="SELECT * FRO... Livres" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -160,6 +146,7 @@
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true">
+                <filter text="borrowerNo=172" />
                 <filter text="copyNo=1081" />
                 <filter text="copyNo=1005" />
               </filtering>
@@ -186,32 +173,21 @@
         <entry file="file://$PROJECT_DIR$/createDatabase.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="58" column="47" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
+              <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
               <folding>
-                <marker date="1458253194949" expanded="true" signature="271:304" placeholder="DROP TABLE I... " />
-                <marker date="1458253194949" expanded="true" signature="324:505" placeholder="CREATE TABLE... Book" />
-                <marker date="1458253194949" expanded="true" signature="865:902" placeholder="DROP TABLE I... " />
-                <marker date="1458253194949" expanded="true" signature="923:1110" placeholder="CREATE TABLE... Borrower" />
-                <marker date="1458253194949" expanded="true" signature="923:1111" placeholder="CREATE TABLE... Borrower" />
-                <marker date="1458253194949" expanded="true" signature="923:1155" placeholder="CREATE TABLE... Borrower" />
-                <marker date="1458253194949" expanded="true" signature="1525:1562" placeholder="DROP TABLE I... " />
-                <marker date="1458253194949" expanded="true" signature="1583:1877" placeholder="CREATE TABLE... BookLoan" />
-                <marker date="1458253194949" expanded="true" signature="2241:2279" placeholder="DROP TABLE I... " />
-                <marker date="1458253194949" expanded="true" signature="2304:2477" placeholder="CREATE TABLE... Book_copy" />
-                <marker date="1458253194949" expanded="true" signature="2304:2484" placeholder="CREATE TABLE... Book_copy" />
-                <marker date="1458253194949" expanded="true" signature="2304:2531" placeholder="CREATE TABLE... Book_copy" />
-                <marker date="1458253194949" expanded="true" signature="2304:2595" placeholder="CREATE TABLE... Book_copy" />
+                <marker date="1458310841219" expanded="true" signature="293:326" placeholder="DROP TABLE I... " />
+                <marker date="1458310841219" expanded="true" signature="346:527" placeholder="CREATE TABLE... Book" />
+                <marker date="1458310841219" expanded="true" signature="914:952" placeholder="DROP TABLE I... " />
+                <marker date="1458310841219" expanded="true" signature="973:1275" placeholder="CREATE TABLE... Book_copy" />
+                <marker date="1458310841219" expanded="true" signature="1693:1730" placeholder="DROP TABLE I... " />
+                <marker date="1458310841219" expanded="true" signature="1751:1946" placeholder="CREATE TABLE... Borrower" />
+                <marker date="1458310841219" expanded="true" signature="1751:1947" placeholder="CREATE TABLE... Borrower" />
+                <marker date="1458310841219" expanded="true" signature="1751:1991" placeholder="CREATE TABLE... Borrower" />
+                <marker date="1458310841219" expanded="true" signature="2385:2422" placeholder="DROP TABLE I... " />
+                <marker date="1458310841219" expanded="true" signature="2443:2464" placeholder="CREATE TABLE... BookLoan" />
+                <marker date="1458310841219" expanded="true" signature="2443:2831" placeholder="CREATE TABLE... BookLoan" />
+                <marker date="1458310841219" expanded="true" signature="2443:2832" placeholder="CREATE TABLE... BookLoan" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Book.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Data/Book.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -234,9 +210,10 @@
         <option value="$PROJECT_DIR$/cnx.py" />
         <option value="$PROJECT_DIR$/addContent.py" />
         <option value="$PROJECT_DIR$/giveContent.py" />
-        <option value="$PROJECT_DIR$/createDatabase.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/Data/BookCopy.csv" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/eec4f7c3-71f4-43a9-829d-db5d9b125443/console.sql" />
+        <option value="$PROJECT_DIR$/createDatabase.py" />
         <option value="$PROJECT_DIR$/BDAction/insert.py" />
       </list>
     </option>
@@ -296,34 +273,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="8TRD149-TP2">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="8TRD149-TP2">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="BDAction">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -356,28 +307,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BDD2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="8TRD149-TP2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BDAction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../8TRD149-TP1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -636,49 +572,58 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08985879" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08985879" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31907895" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9101412" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3181208" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3181208" sideWeight="0.49707174" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3986577" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3986577" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31907895" sideWeight="0.50292826" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3181208" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08985879" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31907895" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3181208" sideWeight="0.49707174" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08985879" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9101412" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3986577" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3986577" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -701,11 +646,6 @@
           <line>4</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/BDAction/insert.py</url>
-          <line>60</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="5" />
     </breakpoint-manager>
@@ -715,239 +655,34 @@
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/createDatabase.py">
+    <entry file="file://$PROJECT_DIR$/BDAction/insert.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="49" />
           <folding>
-            <marker date="1458253194949" expanded="true" signature="271:304" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="324:505" placeholder="CREATE TABLE... Book" />
-            <marker date="1458253194949" expanded="true" signature="865:902" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="923:1110" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1458253194949" expanded="true" signature="923:1111" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1458253194949" expanded="true" signature="923:1155" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1458253194949" expanded="true" signature="1525:1562" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="1583:1877" placeholder="CREATE TABLE... BookLoan" />
-            <marker date="1458253194949" expanded="true" signature="2241:2279" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="2304:2477" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1458253194949" expanded="true" signature="2304:2484" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1458253194949" expanded="true" signature="2304:2531" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1458253194949" expanded="true" signature="2304:2595" placeholder="CREATE TABLE... Book_copy" />
+            <element signature="e#0#25#0" expanded="true" />
+            <marker date="1458310926361" expanded="true" signature="395:439" placeholder="INSERT INTO Book... " />
+            <marker date="1458310926361" expanded="true" signature="828:906" placeholder="INSERT INTO Book_copy... " />
+            <marker date="1458310926361" expanded="true" signature="863:905" placeholder="Select ISBN Book" />
+            <marker date="1458310926361" expanded="true" signature="1286:1363" placeholder="Select title... Book" />
+            <marker date="1458310926361" expanded="true" signature="1286:1365" placeholder="Select title... Book" />
+            <marker date="1458310926361" expanded="true" signature="1286:1370" placeholder="Select copyN... Book" />
+            <marker date="1458310926361" expanded="true" signature="1286:1390" placeholder="Select title... Book" />
+            <marker date="1458310926361" expanded="true" signature="2044:2120" placeholder="INSERT INTO Borrower... " />
+            <marker date="1458310926361" expanded="true" signature="2473:2522" placeholder="Select title... Book" />
+            <marker date="1458310926361" expanded="true" signature="3140:3311" placeholder="SELECT b.tit... BookLoan" />
+            <marker date="1458310926361" expanded="true" signature="4100:4374" placeholder="INSERT INTO bookloan... " />
+            <marker date="1458310926361" expanded="true" signature="4298:4372" placeholder="SELECT borro... borrower" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/eec4f7c3-71f4-43a9-829d-db5d9b125443/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addContent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1458138674053" expanded="true" signature="481:562" placeholder="INSERT INTO Livres... " />
-            <marker date="1458138674053" expanded="true" signature="907:939" placeholder="INSERT INTO Membres... " />
-            <marker date="1458138674053" expanded="true" signature="1408:1482" placeholder="INSERT INTO Emprunts... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/giveContent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="78" selection-start-line="11" selection-start-column="78" selection-end-line="11" selection-end-column="78" />
-          <folding>
-            <marker date="1458144771222" expanded="true" signature="170:222" placeholder="SELECT * FRO... Livres" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/createDatabase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="87" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="87" />
-          <folding>
-            <marker date="1458253194949" expanded="true" signature="271:304" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="324:505" placeholder="CREATE TABLE... Book" />
-            <marker date="1458253194949" expanded="true" signature="865:902" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="923:1110" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1458253194949" expanded="true" signature="923:1111" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1458253194949" expanded="true" signature="923:1155" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1458253194949" expanded="true" signature="1525:1562" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="1583:1877" placeholder="CREATE TABLE... BookLoan" />
-            <marker date="1458253194949" expanded="true" signature="2241:2279" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="2304:2477" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1458253194949" expanded="true" signature="2304:2484" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1458253194949" expanded="true" signature="2304:2531" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1458253194949" expanded="true" signature="2304:2595" placeholder="CREATE TABLE... Book_copy" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addContent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1458138674053" expanded="true" signature="481:562" placeholder="INSERT INTO Livres... " />
-            <marker date="1458138674053" expanded="true" signature="907:939" placeholder="INSERT INTO Membres... " />
-            <marker date="1458138674053" expanded="true" signature="1408:1482" placeholder="INSERT INTO Emprunts... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/giveContent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1458144771222" expanded="true" signature="170:222" placeholder="SELECT * FRO... Livres" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/createDatabase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="75" selection-start-line="64" selection-start-column="75" selection-end-line="64" selection-end-column="75" />
-          <folding>
-            <marker date="1458253194949" expanded="true" signature="271:304" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="324:505" placeholder="CREATE TABLE... Book" />
-            <marker date="1458253194949" expanded="true" signature="865:902" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="923:1110" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1458253194949" expanded="true" signature="923:1111" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1458253194949" expanded="true" signature="923:1155" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1458253194949" expanded="true" signature="1525:1562" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="1583:1877" placeholder="CREATE TABLE... BookLoan" />
-            <marker date="1458253194949" expanded="true" signature="2241:2279" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="2304:2477" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1458253194949" expanded="true" signature="2304:2484" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1458253194949" expanded="true" signature="2304:2531" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1458253194949" expanded="true" signature="2304:2595" placeholder="CREATE TABLE... Book_copy" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addContent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1458138674053" expanded="true" signature="481:562" placeholder="INSERT INTO Livres... " />
-            <marker date="1458138674053" expanded="true" signature="907:939" placeholder="INSERT INTO Membres... " />
-            <marker date="1458138674053" expanded="true" signature="1408:1482" placeholder="INSERT INTO Emprunts... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8b8cabd5-c1bf-4fac-9914-8bf62c185f12/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addContent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1458138674053" expanded="true" signature="481:562" placeholder="INSERT INTO Livres... " />
-            <marker date="1458138674053" expanded="true" signature="907:939" placeholder="INSERT INTO Membres... " />
-            <marker date="1458138674053" expanded="true" signature="1408:1482" placeholder="INSERT INTO Emprunts... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BDAction/select.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/eec4f7c3-71f4-43a9-829d-db5d9b125443">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>eec4f7c3-71f4-43a9-829d-db5d9b125443</OriginalElement>
-          <nodes>
-            <node x="" y="">eec4f7c3-71f4-43a9-829d-db5d9b125443.TABLE:tp2db.bookloan</node>
-            <node x="" y="">eec4f7c3-71f4-43a9-829d-db5d9b125443.TABLE:tp2db.book_copy</node>
-            <node x="" y="">eec4f7c3-71f4-43a9-829d-db5d9b125443.TABLE:tp2db.book</node>
-            <node x="" y="">eec4f7c3-71f4-43a9-829d-db5d9b125443.TABLE:tp2db.borrower</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="209.0" y="124.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/createDatabase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="47" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
-          <folding>
-            <marker date="1458253194949" expanded="true" signature="271:304" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="324:505" placeholder="CREATE TABLE... Book" />
-            <marker date="1458253194949" expanded="true" signature="865:902" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="923:1110" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1458253194949" expanded="true" signature="923:1111" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1458253194949" expanded="true" signature="923:1155" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1458253194949" expanded="true" signature="1525:1562" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="1583:1877" placeholder="CREATE TABLE... BookLoan" />
-            <marker date="1458253194949" expanded="true" signature="2241:2279" placeholder="DROP TABLE I... " />
-            <marker date="1458253194949" expanded="true" signature="2304:2477" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1458253194949" expanded="true" signature="2304:2484" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1458253194949" expanded="true" signature="2304:2531" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1458253194949" expanded="true" signature="2304:2595" placeholder="CREATE TABLE... Book_copy" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Book.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -970,16 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/giveContent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1458144771222" expanded="true" signature="170:222" placeholder="SELECT * FRO... Livres" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/3407487d/eec4f7c3-71f4-43a9-829d-db5d9b125443/tp2db.book_copy">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -990,49 +715,331 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true">
+            <filter text="ISBN=11822367" />
             <filter text="ISBN=74229475" />
             <filter text="ISBN=Pride and Prejudice and Zombies" />
-            <filter text="ISBN=11822367" />
             <filter text="ISBN = 11822367" />
             <filter text="ISBN=11" />
           </filtering>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/giveContent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#53#0" expanded="true" />
+            <marker date="1458144771222" expanded="true" signature="170:222" placeholder="SELECT * FRO... Livres" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BDAction/insert.py">
+    <entry file="dbDummy://dbtable:/3407487d/eec4f7c3-71f4-43a9-829d-db5d9b125443/tp2db.bookloan">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="copyNo=1081" />
+            <filter text="copyNo=1005" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3407487d/eec4f7c3-71f4-43a9-829d-db5d9b125443/tp2db.borrower">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createDatabase.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="148" column="134" selection-start-line="148" selection-start-column="134" selection-end-line="148" selection-end-column="134" />
+          <caret line="82" column="63" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="63" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <marker date="1458258257372" expanded="true" signature="395:439" placeholder="INSERT INTO Book... " />
-            <marker date="1458258257372" expanded="true" signature="778:820" placeholder="Select ISBN Book" />
-            <marker date="1458258257372" expanded="true" signature="1070:1110" placeholder="INSERT INTO Book_copy... " />
-            <marker date="1458258257372" expanded="true" signature="1478:1555" placeholder="Select title... Book" />
-            <marker date="1458258257372" expanded="true" signature="1478:1557" placeholder="Select title... Book" />
-            <marker date="1458258257372" expanded="true" signature="1478:1562" placeholder="Select copyN... Book" />
-            <marker date="1458258257372" expanded="true" signature="1478:1582" placeholder="Select title... Book" />
-            <marker date="1458258257372" expanded="true" signature="2175:2251" placeholder="INSERT INTO Borrower... " />
-            <marker date="1458258257372" expanded="true" signature="2562:2611" placeholder="Select title... Book" />
-            <marker date="1458258257372" expanded="true" signature="2562:3248" placeholder="Select title... Book" />
-            <marker date="1458258257372" expanded="true" signature="3248:3320" placeholder="SELECT * FRO... BookLoan" />
-            <marker date="1458258257372" expanded="true" signature="4106:4135" placeholder="INSERT INTO bookloan... " />
-            <marker date="1458258257372" expanded="true" signature="4106:4149" placeholder="INSERT INTO bookloan... " />
-            <marker date="1458258257372" expanded="true" signature="4106:4175" placeholder="INSERT INTO bookloan... " />
-            <marker date="1458258257372" expanded="true" signature="4106:4212" placeholder="INSERT INTO bookloan... " />
-            <marker date="1458258257372" expanded="true" signature="4106:4334" placeholder="INSERT INTO bookloan... " />
-            <marker date="1458258257372" expanded="true" signature="4106:4358" placeholder="INSERT INTO bookloan... " />
+            <marker date="1458310841219" expanded="true" signature="293:326" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="346:527" placeholder="CREATE TABLE... Book" />
+            <marker date="1458310841219" expanded="true" signature="914:952" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="973:1275" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1458310841219" expanded="true" signature="1693:1730" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="1751:1946" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="1751:1947" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="1751:1991" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="2385:2422" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="2443:2464" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1458310841219" expanded="true" signature="2443:2831" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1458310841219" expanded="true" signature="2443:2832" placeholder="CREATE TABLE... BookLoan" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Book.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createDatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1458310841219" expanded="true" signature="293:326" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="346:527" placeholder="CREATE TABLE... Book" />
+            <marker date="1458310841219" expanded="true" signature="914:952" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="973:1275" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1458310841219" expanded="true" signature="1693:1730" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="1751:1946" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="1751:1947" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="1751:1991" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="2385:2422" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="2443:2464" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1458310841219" expanded="true" signature="2443:2831" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1458310841219" expanded="true" signature="2443:2832" placeholder="CREATE TABLE... BookLoan" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/eec4f7c3-71f4-43a9-829d-db5d9b125443/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addContent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/giveContent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="78" selection-start-line="11" selection-start-column="78" selection-end-line="11" selection-end-column="78" />
+          <folding>
+            <marker date="1458144771222" expanded="true" signature="170:222" placeholder="SELECT * FRO... Livres" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createDatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="87" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="87" />
+          <folding>
+            <marker date="1458310841219" expanded="true" signature="293:326" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="346:527" placeholder="CREATE TABLE... Book" />
+            <marker date="1458310841219" expanded="true" signature="914:952" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="973:1275" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1458310841219" expanded="true" signature="1693:1730" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="1751:1946" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="1751:1947" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="1751:1991" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="2385:2422" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="2443:2464" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1458310841219" expanded="true" signature="2443:2831" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1458310841219" expanded="true" signature="2443:2832" placeholder="CREATE TABLE... BookLoan" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addContent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/giveContent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1458144771222" expanded="true" signature="170:222" placeholder="SELECT * FRO... Livres" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createDatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="75" selection-start-line="64" selection-start-column="75" selection-end-line="64" selection-end-column="75" />
+          <folding>
+            <marker date="1458310841219" expanded="true" signature="293:326" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="346:527" placeholder="CREATE TABLE... Book" />
+            <marker date="1458310841219" expanded="true" signature="914:952" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="973:1275" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1458310841219" expanded="true" signature="1693:1730" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="1751:1946" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="1751:1947" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="1751:1991" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="2385:2422" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="2443:2464" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1458310841219" expanded="true" signature="2443:2831" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1458310841219" expanded="true" signature="2443:2832" placeholder="CREATE TABLE... BookLoan" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addContent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8b8cabd5-c1bf-4fac-9914-8bf62c185f12/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addContent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BDAction/select.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/eec4f7c3-71f4-43a9-829d-db5d9b125443">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>eec4f7c3-71f4-43a9-829d-db5d9b125443</OriginalElement>
+          <nodes>
+            <node x="" y="">eec4f7c3-71f4-43a9-829d-db5d9b125443.TABLE:tp2db.bookloan</node>
+            <node x="" y="">eec4f7c3-71f4-43a9-829d-db5d9b125443.TABLE:tp2db.book_copy</node>
+            <node x="" y="">eec4f7c3-71f4-43a9-829d-db5d9b125443.TABLE:tp2db.book</node>
+            <node x="" y="">eec4f7c3-71f4-43a9-829d-db5d9b125443.TABLE:tp2db.borrower</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="209.0" y="124.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Columns</Category>
+            <Category>Key columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/giveContent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1458144771222" expanded="true" signature="170:222" placeholder="SELECT * FRO... Livres" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Book.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/BookCopy.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="141" column="17" selection-start-line="141" selection-start-column="17" selection-end-line="141" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Borrower.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/eec4f7c3-71f4-43a9-829d-db5d9b125443/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createDatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
+          <folding>
+            <marker date="1458310841219" expanded="true" signature="293:326" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="346:527" placeholder="CREATE TABLE... Book" />
+            <marker date="1458310841219" expanded="true" signature="914:952" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="973:1275" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1458310841219" expanded="true" signature="1693:1730" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="1751:1946" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="1751:1947" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="1751:1991" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1458310841219" expanded="true" signature="2385:2422" placeholder="DROP TABLE I... " />
+            <marker date="1458310841219" expanded="true" signature="2443:2464" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1458310841219" expanded="true" signature="2443:2831" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1458310841219" expanded="true" signature="2443:2832" placeholder="CREATE TABLE... BookLoan" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1059,17 +1066,68 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true">
+            <filter text="borrowerNo=172" />
             <filter text="copyNo=1081" />
             <filter text="copyNo=1005" />
           </filtering>
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/eec4f7c3-71f4-43a9-829d-db5d9b125443/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26327434">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+    <entry file="dbDummy://dbtable:/3407487d/eec4f7c3-71f4-43a9-829d-db5d9b125443/tp2db.book_copy">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="ISBN=11822367" />
+            <filter text="ISBN=74229475" />
+            <filter text="ISBN=Pride and Prejudice and Zombies" />
+            <filter text="ISBN = 11822367" />
+            <filter text="ISBN=11" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3407487d/eec4f7c3-71f4-43a9-829d-db5d9b125443/tp2db.book">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="ISBN=70920498" />
+            <filter text="ISBN=11822367" />
+            <filter text="ISBN=74229475" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BDAction/insert.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.2095435">
+          <caret line="136" column="12" selection-start-line="136" selection-start-column="12" selection-end-line="136" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <marker date="1458310926361" expanded="true" signature="395:439" placeholder="INSERT INTO Book... " />
+            <marker date="1458310926361" expanded="true" signature="828:906" placeholder="INSERT INTO Book_copy... " />
+            <marker date="1458310926361" expanded="true" signature="863:905" placeholder="Select ISBN Book" />
+            <marker date="1458310926361" expanded="true" signature="1286:1363" placeholder="Select title... Book" />
+            <marker date="1458310926361" expanded="true" signature="1286:1365" placeholder="Select title... Book" />
+            <marker date="1458310926361" expanded="true" signature="1286:1370" placeholder="Select copyN... Book" />
+            <marker date="1458310926361" expanded="true" signature="1286:1390" placeholder="Select title... Book" />
+            <marker date="1458310926361" expanded="true" signature="2044:2120" placeholder="INSERT INTO Borrower... " />
+            <marker date="1458310926361" expanded="true" signature="2473:2522" placeholder="Select title... Book" />
+            <marker date="1458310926361" expanded="true" signature="3140:3311" placeholder="SELECT b.tit... BookLoan" />
+            <marker date="1458310926361" expanded="true" signature="4100:4374" placeholder="INSERT INTO bookloan... " />
+            <marker date="1458310926361" expanded="true" signature="4298:4372" placeholder="SELECT borro... borrower" />
+          </folding>
         </state>
       </provider>
     </entry>
