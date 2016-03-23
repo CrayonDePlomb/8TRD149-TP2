@@ -95,9 +95,13 @@ def create():
     print("Book_copy est crée et remplir\n")
 
 
-    sql = "CREATE ASSERTION BorrowerNotHandlingTooMuch " \
-          "CHECK (NOT EXIST (SELECT * FROM BookLoan " \
-          "GROUP BY borrowerNo HAVING COUNT (*) > 3 ))"
+    sql = "CREATE TRIGGER insert_bookloan BEFORE INSERT ON bookloan " \
+          "FOR EACH ROW " \
+          "BEGIN " \
+          "IF NEW.borrowerNo IS NOT NULL THEN " \
+          "SET NEW.dateDue = 1900-11-11; " \
+          "END IF;" \
+          "END;"
     cur.execute(sql)
     db.commit()
 
