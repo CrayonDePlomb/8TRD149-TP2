@@ -108,7 +108,6 @@ def create():
           "END IF;" \
           "END;"\
 
-
     cur.execute(sql)
     db.commit()
 
