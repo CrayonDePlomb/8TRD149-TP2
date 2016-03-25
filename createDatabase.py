@@ -2,16 +2,20 @@
 # -*- coding: utf-8 -*-
 import mysql.connector
 
+user = "root"
+password = "root678"
+database = "tp2DB"
+
 def create():
 
 
-    db = mysql.connector.connect(user="root", database="tp2DB")
+    db = mysql.connector.connect(user=user, password=password, database= database)
 
     cur = db.cursor()
 
 
 
-    cur.execute("SET FOREIGN_KEY_CHECKS=0") # Il ne regarde plus les foreigh_key
+    cur.execute("SET FOREIGN_KEY_CHECKS=0") # Il ne regarde plus les foreign_key
 
     cur.execute("DROP TABLE IF EXISTS Book Cascade")
     cur.execute("CREATE TABLE Book "
@@ -70,6 +74,8 @@ def create():
     print("BookLoand est crée et remplir\n")
 
     cur.execute(sql)
+    ###############
+
     db.commit()
 
 
@@ -80,8 +86,7 @@ def create():
                     "ISBN INT(4), "
                     "available VARCHAR(5) DEFAULT \"true\","
                     "PRIMARY KEY (copyNo),"
-                    "FOREIGN KEY (ISBN) REFERENCES Book(ISBN))"
-                    )
+                    "FOREIGN KEY (ISBN) REFERENCES Book(ISBN))")
 
         cur.execute("LOAD DATA LOCAL INFILE 'Data/BookCopy.csv'"
                     "INTO TABLE Book_copy "
@@ -95,14 +100,20 @@ def create():
 
     print("Book_copy est crée et remplir\n")
 
+    sql = "CREATE TRIGGER insert_bookloan BEFORE INSERT ON bookloan " \
+          "FOR EACH ROW " \
+          "BEGIN " \
+          "IF NEW.borrowerNo IS NOT NULL THEN " \
+          "SET NEW.dateDue = 1900-11-11; " \
+          "END IF;" \
+          "END;"\
 
-    sql = "CREATE ASSERTION BorrowerNotHandlingTooMuch " \
-          "CHECK (NOT EXIST (SELECT * FROM BookLoan " \
-          "GROUP BY borrowerNo HAVING COUNT (*) > 3 ))"
+
     cur.execute(sql)
     db.commit()
 
     cur.execute("SET FOREIGN_KEY_CHECKS=1")
     db.close()
+
 
 
