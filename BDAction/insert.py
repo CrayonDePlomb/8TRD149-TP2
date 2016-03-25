@@ -140,7 +140,7 @@ def ajouterEmprunt():
 
     nomAbonne = input("Entrer le nom de l\'abonné: \n")
     titreLivre = input("Entrer le titre du livre à emprunter: \n")
-    dateInput = input("Entrer la date de sortie de l\'emprunt: \n")
+    dateInput = input("Entrer la date de sortie de l\'emprunt: (YYYY-MM-DD) \n")
     dateInputConvertie = datetime.datetime.strptime(dateInput, "%Y-%m-%d")
     dateOutputConvertie = dateInputConvertie + datetime.timedelta(days=14)
 
