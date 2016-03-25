@@ -95,14 +95,17 @@ def create():
 
     print("Book_copy est crée et remplir\n")
 
-
-    sql = "CREATE TRIGGER insert_bookloan BEFORE INSERT ON bookloan " \
-          "FOR EACH ROW " \
+    sql = "create TRIGGER BorrowerNotHandlingTooMuch BEFORE INSERT ON BookLoan " \
+          "for EACH ROW " \
           "BEGIN " \
-          "IF NEW.borrowerNo IS NOT NULL THEN " \
-          "SET NEW.dateDue = 1900-11-11; " \
-          "END IF;" \
-          "END;"
+          "IF exists (SELECT borrowerNo, count(copyNo) as nbOfCopy FROM BookLoan GROUP BY borrowerNo HAVING  nbOfCopy > 3) THEN " \
+          "DELETE FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo; " \
+          "END IF; " \
+          "END; "
+
+    print("Ajout du Trigger\n")
+
+
     cur.execute(sql)
     db.commit()
 
