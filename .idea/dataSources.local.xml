@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - tp2db@localhost" uuid="eec4f7c3-71f4-43a9-829d-db5d9b125443">
+    <data-source name="MySQL - tp2db@localhost" uuid="4ebd4aae-f271-4c34-be83-59db8680f684">
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
+      <schema-pattern>tp2db.*</schema-pattern>
+      <default-schemas>tp2db.*</default-schemas>
     </data-source>
   </component>
 </project>
