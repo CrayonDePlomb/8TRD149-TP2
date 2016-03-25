@@ -3,8 +3,8 @@ import datetime
 import mysql.connector
 
 user = "root"
-password = "root678"
-database = "tp2DB"
+password = ""
+database = "tp2db"
 
 def ajouterLivre():
     db = mysql.connector.connect(user=user, password=password, database= database)
@@ -12,8 +12,8 @@ def ajouterLivre():
 
     ISBNLivre = input("Entrez le ISBN:\n")
     livreTitre = input("Entrez le titre du livre:\n")
-    livreYear = input("Entrez l\'année du livre (FORMAT):\n")
-    livreEdition = input("Entrez l\'édition du livre (FORMAT):\n")
+    livreYear = input("Entrez l\'année du livre (YYYY):\n")
+    livreEdition = input("Entrez l\'édition du livre (XXXX):\n")
 
     sql = "INSERT INTO Book VALUES({0},\"{1}\",{2},{3});".format(ISBNLivre,livreTitre,livreYear,livreEdition)
 
@@ -87,6 +87,7 @@ def ajouterMembre():
         cur.execute(sql)
 
         db.commit()
+        print("Ajout d\'un nouveau membre \n")
     except:
         db.rollback()
     db.close()
@@ -94,7 +95,6 @@ def ajouterMembre():
 
 def selectLivre():
     db = mysql.connector.connect(user=user, password=password, database= database)
-    cur = db.cursor()
 
     livreTitre = input("Entrer un titre de livre \n")
     sql = "SELECT title FROM Book WHERE title LIKE \"%{0}%\"".format(livreTitre)

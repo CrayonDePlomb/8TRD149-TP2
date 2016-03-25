@@ -1,6 +1,4 @@
 import createDatabase #Création de la base de donnée.
-import addContent #Fonctions permettant l'ajout de contenu.
-import giveContent #Fonctions permettant de récupérer du contenu.
 
 import mysql.connector
 
@@ -29,7 +27,7 @@ while choix != 0:
 
     elif choix == "1":
         insert.ajouterLivre()
-        print("Le nouveau livre a été ajouté.\n")
+        print("L'opération a été effectué.\n")
 
     elif choix == "2":
         insert.selectLivre()
@@ -45,8 +43,6 @@ while choix != 0:
 
     elif choix == "5":
         insert.ajouterMembre()
-        print("L\'abonné a été ajouté\n")
-
     elif choix == "6":
         insert.rechercheSelonUnedate()
 

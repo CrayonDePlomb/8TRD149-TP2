@@ -4,12 +4,12 @@ import mysql.connector
 
 user = "root"
 password = ""
-database = "tp2DB"
+database = "tp2db"
 
 def create():
 
 
-    db = mysql.connector.connect(user=user, password=password, database= database)
+    db = mysql.connector.connect(user=user, password=password, database=database)
 
     cur = db.cursor()
 
@@ -20,7 +20,7 @@ def create():
     cur.execute("DROP TABLE IF EXISTS Book Cascade")
     cur.execute("CREATE TABLE Book "
                 "(ISBN INT PRIMARY KEY NOT NULL, "
-                "title VARCHAR(255) NOT NULL,"
+                "title VARCHAR(255) UNIQUE NOT NULL,"
                 "year INT(4),"
                 "edition INT(2))")
 
@@ -37,7 +37,7 @@ def create():
     cur.execute("DROP TABLE IF EXISTS Borrower CASCADE ")
     cur.execute("CREATE TABLE Borrower "
                 "(borrowerNo INT(4) NOT NULL AUTO_INCREMENT, "
-                "borrowerName VARCHAR(255) NOT NULL, "
+                "borrowerName VARCHAR(255) UNIQUE NOT NULL, "
                 "borrowerAddress VARCHAR(255),"
                 "PRIMARY KEY (borrowerNo))")
 
@@ -59,7 +59,7 @@ def create():
                 "(copyNo INT(4) NOT NULL , "
                 "dateOut DATE , "
                 "dateDue DATE,"
-                "borrowerNo INT(4),"
+                "borrowerNo INT(4) NOT NULL,"
                 "PRIMARY KEY (copyNo,dateOut),"
                 "FOREIGN KEY (borrowerNo) REFERENCES Borrower(borrowerNO))")
 
@@ -71,7 +71,7 @@ def create():
         "LINES TERMINATED BY '\n'"\
         "(copyNo , dateOut, dateDue,borrowerNo)"
 
-    print("BookLoand est crée et remplir\n")
+    print("BookLoan est crée et remplir\n")
 
     cur.execute(sql)
     ###############
@@ -83,8 +83,8 @@ def create():
         cur.execute("DROP TABLE IF EXISTS Book_copy CASCADE ")
         cur.execute("CREATE TABLE Book_copy "
                     "(copyNo INT(4) NOT NULL AUTO_INCREMENT, "
-                    "ISBN INT(4), "
-                    "available VARCHAR(5) DEFAULT \"true\","
+                    "ISBN INT(4)NOT NULL, "
+                    "available VARCHAR(4) DEFAULT \"true\","
                     "PRIMARY KEY (copyNo),"
                     "FOREIGN KEY (ISBN) REFERENCES Book(ISBN))")
 
@@ -108,8 +108,20 @@ def create():
           "END IF; " \
           "END; "
 
-    print("Ajout du Trigger\n")
+    print("Ajout du Trigger BorrowerNotHandlingTooMuch\n")
 
+    cur.execute(sql)
+    db.commit()
+    sql = "create TRIGGER BookLoanNotInDate BEFORE INSERT On BookLoan " \
+              "for EACH ROW " \
+              "BEGIN " \
+                "IF exists(SELECT * from BookLoan bl where bl.borrowerNo = new.borrowerNo) AND " \
+                 "new.dateOut NOT BETWEEN bl.dateOut and bl.dateDue then " \
+                  "DELETE from BookLoan WHERE BookLoan.borrowerNo = new.borrowerNo; " \
+                "END IF; "\
+              "END; "\
+
+    print("Ajout du Trigger BookLoanNotInDate\n")
 
     cur.execute(sql)
     db.commit()
