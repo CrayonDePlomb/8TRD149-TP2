@@ -29,7 +29,7 @@ while choix != 0:
 
     elif choix == "1":
         insert.ajouterLivre()
-        print("Le nouveau livre a été ajouté.\n")
+        print("L'opération a été effectué.\n")
 
     elif choix == "2":
         insert.selectLivre()

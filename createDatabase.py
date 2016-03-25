@@ -20,7 +20,7 @@ def create():
     cur.execute("DROP TABLE IF EXISTS Book Cascade")
     cur.execute("CREATE TABLE Book "
                 "(ISBN INT PRIMARY KEY NOT NULL, "
-                "title VARCHAR(255) NOT NULL,"
+                "title VARCHAR(255) UNIQUE NOT NULL,"
                 "year INT(4),"
                 "edition INT(2))")
 
@@ -37,7 +37,7 @@ def create():
     cur.execute("DROP TABLE IF EXISTS Borrower CASCADE ")
     cur.execute("CREATE TABLE Borrower "
                 "(borrowerNo INT(4) NOT NULL AUTO_INCREMENT, "
-                "borrowerName VARCHAR(255) NOT NULL, "
+                "borrowerName VARCHAR(255) UNIQUE NOT NULL, "
                 "borrowerAddress VARCHAR(255),"
                 "PRIMARY KEY (borrowerNo))")
 
@@ -59,7 +59,7 @@ def create():
                 "(copyNo INT(4) NOT NULL , "
                 "dateOut DATE , "
                 "dateDue DATE,"
-                "borrowerNo INT(4),"
+                "borrowerNo INT(4) NOT NULL,"
                 "PRIMARY KEY (copyNo,dateOut),"
                 "FOREIGN KEY (borrowerNo) REFERENCES Borrower(borrowerNO))")
 
@@ -83,8 +83,8 @@ def create():
         cur.execute("DROP TABLE IF EXISTS Book_copy CASCADE ")
         cur.execute("CREATE TABLE Book_copy "
                     "(copyNo INT(4) NOT NULL AUTO_INCREMENT, "
-                    "ISBN INT(4), "
-                    "available VARCHAR(5) DEFAULT \"true\","
+                    "ISBN INT(4)NOT NULL, "
+                    "available VARCHAR(4) DEFAULT \"true\","
                     "PRIMARY KEY (copyNo),"
                     "FOREIGN KEY (ISBN) REFERENCES Book(ISBN))")
 
@@ -100,13 +100,13 @@ def create():
 
     print("Book_copy est crée et remplir\n")
 
-    sql = "CREATE TRIGGER insert_bookloan BEFORE INSERT ON bookloan " \
+    """ sql = "CREATE TRIGGER insert_bookloan AFTER INSERT ON Bookloan " \
           "FOR EACH ROW " \
           "BEGIN " \
-          "IF NEW.borrowerNo IS NOT NULL THEN " \
-          "SET NEW.dateDue = 1900-11-11; " \
-          "END IF;" \
-          "END;"\
+          "IF EXISTS (SELECT borrowerNo, COUNT(copyNo) AS numberOfCopy FROM bookloan GROUP BY borrowerNo HAVING numberOfCopy > 3) " \
+          "DELETE FROM bookloan WHERE Bookloan.borrowerNo = NEW.Bookloan.borrowerNo; " \
+          "END IF; " \
+          "END; " \ """
 
     cur.execute(sql)
     db.commit()

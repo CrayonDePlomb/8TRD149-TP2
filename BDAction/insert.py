@@ -94,7 +94,6 @@ def ajouterMembre():
 
 def selectLivre():
     db = mysql.connector.connect(user=user, password=password, database= database)
-    cur = db.cursor()
 
     livreTitre = input("Entrer un titre de livre \n")
     sql = "SELECT title FROM Book WHERE title LIKE \"%{0}%\"".format(livreTitre)
