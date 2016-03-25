@@ -3,7 +3,7 @@
 import mysql.connector
 
 user = "root"
-password = "root678"
+password = ""
 database = "tp2DB"
 
 def create():
