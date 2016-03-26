@@ -13,8 +13,8 @@ def displayMenu():
           "3: Ajout d\'un nouvel exemplaire.\n"
           "4: Sortir la liste des exemplaires d'un livre avec le titre exact.\n"
           "5: Ajouter un nouvel abonné.\n"
-          "6: Ajouter un nouvel exemplaire d'un livre..\n"
-          "7: Ajouter un nouvel emprunt d'un livre..\n"
+          "6: Recherche selon une date.\n"
+          "7: Ajouter un nouvel emprunt d'un livre.\n"
           "9: Supprimer la table et recommencer à zéro.\n"
           "0: Sortir du programme.\n")
 
@@ -41,7 +41,7 @@ while choix != 0:
 
     elif choix == "4":
          insert.selectExemplaire()
-         print("Learecherche d\'exemplaire est terminée \n")
+         print("La recherche d\'exemplaire est terminée \n")
 
     elif choix == "5":
         insert.ajouterMembre()
@@ -49,6 +49,7 @@ while choix != 0:
 
     elif choix == "6":
         insert.rechercheSelonUnedate()
+        print("La recherche d\'exemplaire est terminée \n")
 
     elif choix == "7":
         insert.ajouterEmprunt()

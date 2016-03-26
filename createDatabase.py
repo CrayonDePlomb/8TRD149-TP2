@@ -100,6 +100,7 @@ def create():
 
     print("Book_copy est crée et remplir\n")
 
+
     sql = "create TRIGGER BorrowerNotHandlingTooMuch BEFORE INSERT ON BookLoan " \
           "for EACH ROW " \
           "BEGIN " \
