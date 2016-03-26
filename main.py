@@ -1,6 +1,4 @@
 import createDatabase #Création de la base de donnée.
-import addContent #Fonctions permettant l'ajout de contenu.
-import giveContent #Fonctions permettant de récupérer du contenu.
 
 import mysql.connector
 
@@ -10,12 +8,12 @@ def displayMenu():
     print("Choisissez l'option qui vous convient:\n"
           "1: Ajouter un nouveau livre.\n"
           "2: Sortir la liste des livres selon un patron de recherche sur le titre.\n"
-          "3: Ajout d\'un nouvel exemplaire.\n"
+          "3: Ajout d\'un nouvel exemplaire de livre en fournissant ses détails.\n"
           "4: Sortir la liste des exemplaires d'un livre avec le titre exact.\n"
           "5: Ajouter un nouvel abonné.\n"
-          "6: Recherche selon une date.\n"
+          "6: Sortir la liste des exemplaires de livres empruntés selon une date de recherche.\n"
           "7: Ajouter un nouvel emprunt d'un livre.\n"
-          "9: Supprimer la table et recommencer à zéro.\n"
+          "8: Supprimer la table et recommencer à zéro.\n"
           "0: Sortir du programme.\n")
 
 choix = " "
@@ -29,7 +27,6 @@ while choix != 0:
 
     elif choix == "1":
         insert.ajouterLivre()
-        print("L'opération a été effectué.\n")
 
     elif choix == "2":
         insert.selectLivre()
@@ -37,7 +34,7 @@ while choix != 0:
 
     elif choix == "3":
         insert.ajouterExemplaire()
-        print("L\'exemplaire a été ajouté\n")
+        print("L\'opération a été effectué.\n")
 
     elif choix == "4":
          insert.selectExemplaire()
@@ -45,7 +42,6 @@ while choix != 0:
 
     elif choix == "5":
         insert.ajouterMembre()
-        print("L\'abonné a été ajouté\n")
 
     elif choix == "6":
         insert.rechercheSelonUnedate()
@@ -53,8 +49,7 @@ while choix != 0:
 
     elif choix == "7":
         insert.ajouterEmprunt()
-        print("Le nouvel emprunt a été ajouté: \n")
 
-    elif choix == "9":
+    elif choix == "8":
         createDatabase.create()
         print("La base de donnée a été créé.\n")

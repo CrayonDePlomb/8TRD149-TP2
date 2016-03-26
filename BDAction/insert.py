@@ -4,25 +4,27 @@ import mysql.connector
 
 user = "root"
 password = "root678"
-database = "tp2DB"
+database = "tp2db"
 
 def ajouterLivre():
     db = mysql.connector.connect(user=user, password=password, database= database)
     cur = db.cursor()
 
-    ISBNLivre = input("Entrez le ISBN:\n")
+    ISBNLivre = input("Entrez le ISBN (8 chiffres et 1er chiffre différent de 0):\n")
     livreTitre = input("Entrez le titre du livre:\n")
-    livreYear = input("Entrez l\'année du livre (FORMAT):\n")
-    livreEdition = input("Entrez l\'édition du livre (FORMAT):\n")
+    livreYear = input("Entrez l\'année du livre (YYYY):\n")
+    livreEdition = input("Entrez l\'édition du livre (Au moins un chiffre):\n")
 
     sql = "INSERT INTO Book VALUES({0},\"{1}\",{2},{3});".format(ISBNLivre,livreTitre,livreYear,livreEdition)
 
     try:
         cur.execute(sql)
         db.commit()
+        print("L'opération a été effectué.\n")
 
     except:
         db.rollback()
+        print("L'opération a échoué.\n")
 
     db.close()
 
@@ -47,6 +49,7 @@ def ajouterExemplaire():
             print("exemplaire ajouté \n")
 
         db.commit()
+
     except:
         db.rollback()
 
@@ -87,6 +90,7 @@ def ajouterMembre():
         cur.execute(sql)
 
         db.commit()
+        print("Ajout d\'un nouveau membre \n")
     except:
         db.rollback()
     db.close()
@@ -151,8 +155,12 @@ def ajouterEmprunt():
         cur.execute(sql)
 
         db.commit()
+        print("Le nouvel emprunt a été ajouté: \n")
+
     except:
         db.rollback()
+        print("Le nouvel emprunt n'a pas été ajouté: \n")
+
     db.close()
 
 

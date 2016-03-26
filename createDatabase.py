@@ -4,12 +4,12 @@ import mysql.connector
 
 user = "root"
 password = "root678"
-database = "tp2DB"
+database = "tp2db"
 
 def create():
 
 
-    db = mysql.connector.connect(user=user, password=password, database= database)
+    db = mysql.connector.connect(user=user, password=password, database=database)
 
     cur = db.cursor()
 
@@ -71,7 +71,7 @@ def create():
         "LINES TERMINATED BY '\n'"\
         "(copyNo , dateOut, dateDue,borrowerNo)"
 
-    print("BookLoand est crée et remplir\n")
+    print("BookLoan est crée et remplir\n")
 
     cur.execute(sql)
     ###############
@@ -83,7 +83,7 @@ def create():
         cur.execute("DROP TABLE IF EXISTS Book_copy CASCADE ")
         cur.execute("CREATE TABLE Book_copy "
                     "(copyNo INT(4) NOT NULL AUTO_INCREMENT, "
-                    "ISBN INT(4)NOT NULL, "
+                    "ISBN INT(4) NOT NULL, "
                     "available VARCHAR(4) DEFAULT \"true\","
                     "PRIMARY KEY (copyNo),"
                     "FOREIGN KEY (ISBN) REFERENCES Book(ISBN))")
@@ -101,15 +101,27 @@ def create():
     print("Book_copy est crée et remplir\n")
 
 
-    sql = "create TRIGGER BorrowerNotHandlingTooMuch BEFORE INSERT ON BookLoan " \
-          "for EACH ROW " \
+    sql = "CREATE TRIGGER BorrowerNotHandlingTooMuch BEFORE INSERT ON BookLoan " \
+          "FOR EACH ROW " \
           "BEGIN " \
-          "IF exists (SELECT borrowerNo, count(copyNo) as nbOfCopy FROM BookLoan GROUP BY borrowerNo HAVING  nbOfCopy > 3) THEN " \
+          "IF EXISTS (SELECT borrowerNo, COUNT(copyNo) AS nbOfCopy FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo GROUP BY borrowerNo HAVING  nbOfCopy > 3) THEN " \
           "DELETE FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo; " \
           "END IF; " \
           "END; "
 
-    print("Ajout du Trigger\n")
+    print("Ajout du Trigger BorrowerNotHandlingTooMuch\n")
+
+    cur.execute(sql)
+    db.commit()
+    sql = "CREATE TRIGGER BookLoanNotInDate BEFORE INSERT ON BookLoan " \
+              "FOR EACH ROW " \
+              "BEGIN " \
+              "IF EXISTS (SELECT * FROM BookLoan bl WHERE bl.borrowerNo = NEW.borrowerNo) AND NEW.dateOut NOT BETWEEN bl.dateOut AND bl.dateDue THEN " \
+              "DELETE FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo; " \
+              "END IF; "\
+              "END; "\
+
+    print("Ajout du Trigger BookLoanNotInDate\n")
 
     cur.execute(sql)
     db.commit()
