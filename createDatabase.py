@@ -3,7 +3,7 @@
 import mysql.connector
 
 user = "root"
-password = "root678"
+password = ""
 database = "tp2db"
 
 def create():
@@ -98,9 +98,9 @@ def create():
     sql = "CREATE TRIGGER BorrowerNotHandlingTooMuch BEFORE INSERT ON BookLoan " \
           "FOR EACH ROW " \
           "BEGIN " \
-          "IF EXISTS (SELECT borrowerNo, COUNT(copyNo) AS nbOfCopy FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo GROUP BY borrowerNo HAVING  nbOfCopy > 3) " \
-          "AND "' . NEW.dateOut . '" BETWEEN "' . BookLoan.dateOut . '" AND "' . BookLoan.dateDue . '" " \
-          "THEN DELETE FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo; " \
+          "IF EXISTS (SELECT borrowerNo, COUNT(copyNo) AS nbOfCopy FROM BookLoan bl WHERE bl.borrowerNo = NEW.borrowerNo GROUP BY borrowerNo HAVING  nbOfCopy > 3) " \
+          "AND  \'NEW.dateOut\'  BETWEEN  \'bl.dateOut\'  AND  \'bl.dateDue\' " \
+          "THEN DELETE FROM BookLoan  WHERE borrowerNo = NEW.borrowerNo; " \
           "END IF; " \
           "END; "
 
@@ -114,7 +114,7 @@ def create():
           "FOR EACH ROW " \
           "BEGIN " \
           "IF EXISTS (SELECT * FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo) " \
-          "AND "' . NEW.dateOut . '" BETWEEN "' . BookLoan.dateOut . '" AND "' . BookLoan.dateDue . '" " \
+          "AND  \'NEW.dateOut\'   BETWEEN   \'BookLoan.dateOut\'   AND   \'BookLoan.dateDue\'" \
           "THEN DELETE FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo; " \
           "END IF; "\
           "END; "\
