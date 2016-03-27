@@ -123,5 +123,3 @@ def create():
     cur.execute("SET FOREIGN_KEY_CHECKS=1")
     db.close()
 
-
-

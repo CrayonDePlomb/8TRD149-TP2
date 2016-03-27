@@ -3,7 +3,7 @@ import datetime
 import mysql.connector
 
 user = "root"
-password = ""
+password = "root678"
 database = "tp2db"
 
 def ajouterLivre():
