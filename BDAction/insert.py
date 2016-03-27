@@ -149,12 +149,12 @@ def ajouterEmprunt():
     try:
         cur = db.cursor()
         cur.execute(sql)
-        print("Le nouvel emprunt a été ajouté: \n")
 
         db.commit()
         print("Le nouvel emprunt a été ajouté: \n")
 
     except:
+        db.rollback()
         print("Le titre du livre ou l'abonné n'existe pas dans la bd")
     db.close()
 

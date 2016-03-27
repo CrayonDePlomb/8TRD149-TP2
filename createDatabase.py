@@ -3,7 +3,7 @@
 import mysql.connector
 
 user = "root"
-password = "root678"
+password = ""
 database = "tp2db"
 
 def create():
@@ -38,19 +38,19 @@ def create():
 # CREATION TABLE BOOK_COPY
     cur.execute("DROP TABLE IF EXISTS Book_copy CASCADE ")
     cur.execute("CREATE TABLE Book_copy "
-                    "(copyNo INT(4) NOT NULL AUTO_INCREMENT, "
-                    "ISBN INT(4) NOT NULL, "
-                    "available BOOLEAN NOT NULL DEFAULT TRUE,"
-                    "PRIMARY KEY (copyNo),"
-                    "FOREIGN KEY (ISBN) REFERENCES Book(ISBN))"
-                    )
+                "(copyNo INT(4) NOT NULL AUTO_INCREMENT, "
+                "ISBN INT(4) NOT NULL,"
+                "available BOOLEAN NOT NULL DEFAULT TRUE,"
+                "PRIMARY KEY (copyNo),"
+                "FOREIGN KEY (ISBN) REFERENCES Book(ISBN))"
+                )
 
     cur.execute("LOAD DATA LOCAL INFILE 'Data/BookCopy.csv'"
-                    "INTO TABLE Book_copy "
-                    "FIELDS TERMINATED BY ','"
-                    "ENCLOSED BY '\"'"
-                    "LINES TERMINATED BY '\n'"
-                    "(copyNo, ISBN, available)")
+                "INTO TABLE Book_copy "
+                "FIELDS TERMINATED BY ','"
+                "ENCLOSED BY '\"'"
+                "LINES TERMINATED BY '\n'"
+                "(copyNo, ISBN, available)")
     db.commit()
 
     print("Book_copy est crée et remplir\n")
@@ -84,42 +84,38 @@ def create():
                 "FOREIGN KEY (copyNo) REFERENCES book_copy(copyNo),"
                 "FOREIGN KEY (borrowerNo) REFERENCES Borrower(borrowerNo))")
 
-    cur.execute("LOAD DATA LOCAL INFILE 'Data/BookLoan.csv'"\
-        "INTO TABLE BookLoan "\
-        "FIELDS TERMINATED BY \',\'"\
-        "ENCLOSED BY '\"'"\
-        "LINES TERMINATED BY '\n'"\
-        "(copyNo , dateOut, dateDue,borrowerNo)")
+    cur.execute("LOAD DATA LOCAL INFILE 'Data/BookLoan.csv'"
+                "INTO TABLE BookLoan "
+                "FIELDS TERMINATED BY \',\'"
+                "ENCLOSED BY '\"'"
+                "LINES TERMINATED BY '\n'"
+                "(copyNo , dateOut, dateDue,borrowerNo)")
     db.commit()
 
     print("BookLoan est crée et remplir\n")
 
-# CREATION TRIGGER BORROWER NOT LOANING MORE THAN 3 BOOKS
-    sql = "CREATE TRIGGER BorrowerNotHandlingTooMuch BEFORE INSERT ON BookLoan " \
-          "FOR EACH ROW " \
-          "BEGIN " \
-          "IF EXISTS (SELECT borrowerNo, COUNT(copyNo) AS nbOfCopy FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo GROUP BY borrowerNo HAVING  nbOfCopy > 3) " \
-          "AND "' . NEW.dateOut . '" BETWEEN "' . BookLoan.dateOut . '" AND "' . BookLoan.dateDue . '" " \
-          "THEN DELETE FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo; " \
-          "END IF; " \
-          "END; "
-
-    cur.execute(sql)
+#CREATION TRIGGER BORROWER NOT LOANING MORE THAN 3 BOOKS
+    cur.execute("CREATE TRIGGER BorrowerNotHandlingTooMuch BEFORE INSERT ON BookLoan "
+                "FOR EACH ROW "
+                "BEGIN "
+                "IF EXISTS (SELECT borrowerNo, COUNT(copyNo) AS nbOfCopy FROM BookLoan "
+                "WHERE BookLoan.borrowerNo = NEW.borrowerNo GROUP BY borrowerNo HAVING  nbOfCopy >= 3) "
+                "THEN DELETE FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo; "
+                "END IF; "
+                "END; ")
     db.commit()
 
     print("Ajout du Trigger BorrowerNotHandlingTooMuch\n")
 
-# CREATION TRIGGER BORROWER NOT LOANING BOOK UNVAILABLE AT DATE
-    sql = "CREATE TRIGGER BookLoanNotInDate BEFORE INSERT ON BookLoan " \
-          "FOR EACH ROW " \
-          "BEGIN " \
-          "IF EXISTS (SELECT * FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo) " \
-          "AND "' . NEW.dateOut . '" BETWEEN "' . BookLoan.dateOut . '" AND "' . BookLoan.dateDue . '" " \
-          "THEN DELETE FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo; " \
-          "END IF; "\
-          "END; "\
-
-    cur.execute(sql)
+#CREATION TRIGGER BORROWER NOT LOANING BOOK UNVAILABLE AT DATE
+    cur.execute("CREATE TRIGGER BookLoanNotInDate BEFORE INSERT ON BookLoan "
+                "FOR EACH ROW "
+                "BEGIN "
+                "IF EXISTS (SELECT * FROM BookLoan WHERE BookLoan.copyNo = NEW.copyNo "
+                "AND NEW.dateOut BETWEEN BookLoan.dateOut AND BookLoan.dateDue) "
+                "THEN DELETE FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo;  "
+                "END IF; "
+                "END;")
     db.commit()
 
     print("Ajout du Trigger BookLoanNotInDate\n")
