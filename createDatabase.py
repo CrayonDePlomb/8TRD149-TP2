@@ -104,7 +104,7 @@ def create():
           "FOR EACH ROW " \
           "BEGIN " \
           "IF EXISTS (SELECT borrowerNo, COUNT(copyNo) AS nbOfCopy FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo GROUP BY borrowerNo HAVING  nbOfCopy > 3) " \
-          "AND "' . NEW.dateOut . '" BETWEEN "' . BookLoan.dateOut . '" AND "' . BookLoan.dateDue . '" " \
+          "AND "'  NEW.dateOut  '" BETWEEN "'  BookLoan.dateOut  '" AND "'  BookLoan.dateDue  '" " \
           "THEN DELETE FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo; " \
           "END IF; " \
           "END; "
@@ -118,7 +118,7 @@ def create():
           "FOR EACH ROW " \
           "BEGIN " \
           "IF EXISTS (SELECT * FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo) " \
-          "AND "' . NEW.dateOut . '" BETWEEN "' . BookLoan.dateOut . '" AND "' . BookLoan.dateDue . '" " \
+          "AND "'  NEW.dateOut  '" BETWEEN "'  BookLoan.dateOut  '" AND "'  BookLoan.dateDue  '" " \
           "THEN DELETE FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo; " \
           "END IF; "\
           "END; "\

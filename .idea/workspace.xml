@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1684a798-8706-4937-ada4-e7dbcbeb7ffd" name="Default" comment="Merge branch 'master' of https://github.com/CrayonDePlomb/8TRD149-TP2&#10;&#10;# Conflicts:&#10;#&#9;main.py&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createDatabase.py" afterPath="$PROJECT_DIR$/createDatabase.py" />
     </list>
     <ignored path="BDD2.iws" />
@@ -16,7 +17,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/BDD2$main.coverage" NAME="main Coverage Results" MODIFIED="1459011260987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BDD2$main.coverage" NAME="main Coverage Results" MODIFIED="1459093907111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BDD2$cnx.coverage" NAME="cnx Coverage Results" MODIFIED="1457541376136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -156,18 +157,18 @@
       <file leaf-file-name="createDatabase.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/createDatabase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.62886596">
-              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.67525774">
+              <caret line="107" column="84" selection-start-line="107" selection-start-column="84" selection-end-line="107" selection-end-column="84" />
               <folding>
-                <marker date="1459011425102" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
-                <marker date="1459011425102" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
-                <marker date="1459011425102" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
-                <marker date="1459011425102" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
-                <marker date="1459011425102" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
-                <marker date="1459011425102" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
-                <marker date="1459011425102" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
-                <marker date="1459011425102" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
-                <marker date="1459011425102" expanded="true" signature="4286:4345" placeholder="SELECT borro... bookloan" />
+                <marker date="1459093907107" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
+                <marker date="1459093907107" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
+                <marker date="1459093907107" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
+                <marker date="1459093907107" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
+                <marker date="1459093907107" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
+                <marker date="1459093907107" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
+                <marker date="1459093907107" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
+                <marker date="1459093907107" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
+                <marker date="1459093907107" expanded="true" signature="4274:4333" placeholder="SELECT borro... bookloan" />
               </folding>
             </state>
           </provider>
@@ -620,15 +621,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="93" column="46" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="46" />
           <folding>
-            <marker date="1459011425102" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
-            <marker date="1459011425102" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1459011425102" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
-            <marker date="1459011425102" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1459011425102" expanded="true" signature="4286:4345" placeholder="SELECT borro... bookloan" />
+            <marker date="1459093907107" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
+            <marker date="1459093907107" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1459093907107" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1459093907107" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1459093907107" expanded="true" signature="4274:4333" placeholder="SELECT borro... bookloan" />
           </folding>
         </state>
       </provider>
@@ -687,15 +688,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1459011425102" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
-            <marker date="1459011425102" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1459011425102" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
-            <marker date="1459011425102" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1459011425102" expanded="true" signature="4286:4345" placeholder="SELECT borro... bookloan" />
+            <marker date="1459093907107" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
+            <marker date="1459093907107" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1459093907107" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1459093907107" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1459093907107" expanded="true" signature="4274:4333" placeholder="SELECT borro... bookloan" />
           </folding>
         </state>
       </provider>
@@ -754,15 +755,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1459011425102" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
-            <marker date="1459011425102" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1459011425102" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
-            <marker date="1459011425102" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1459011425102" expanded="true" signature="4286:4345" placeholder="SELECT borro... bookloan" />
+            <marker date="1459093907107" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
+            <marker date="1459093907107" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1459093907107" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1459093907107" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1459093907107" expanded="true" signature="4274:4333" placeholder="SELECT borro... bookloan" />
           </folding>
         </state>
       </provider>
@@ -821,15 +822,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1459011425102" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
-            <marker date="1459011425102" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1459011425102" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
-            <marker date="1459011425102" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1459011425102" expanded="true" signature="4286:4345" placeholder="SELECT borro... bookloan" />
+            <marker date="1459093907107" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
+            <marker date="1459093907107" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1459093907107" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1459093907107" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1459093907107" expanded="true" signature="4274:4333" placeholder="SELECT borro... bookloan" />
           </folding>
         </state>
       </provider>
@@ -875,15 +876,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="47" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
           <folding>
-            <marker date="1459011425102" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
-            <marker date="1459011425102" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1459011425102" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
-            <marker date="1459011425102" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1459011425102" expanded="true" signature="4286:4345" placeholder="SELECT borro... bookloan" />
+            <marker date="1459093907107" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
+            <marker date="1459093907107" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1459093907107" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1459093907107" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1459093907107" expanded="true" signature="4274:4333" placeholder="SELECT borro... bookloan" />
           </folding>
         </state>
       </provider>
@@ -908,15 +909,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1459011425102" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
-            <marker date="1459011425102" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1459011425102" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
-            <marker date="1459011425102" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1459011425102" expanded="true" signature="4286:4345" placeholder="SELECT borro... bookloan" />
+            <marker date="1459093907107" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
+            <marker date="1459093907107" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1459093907107" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1459093907107" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1459093907107" expanded="true" signature="4274:4333" placeholder="SELECT borro... bookloan" />
           </folding>
         </state>
       </provider>
@@ -934,15 +935,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="64" column="87" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="87" />
           <folding>
-            <marker date="1459011425102" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
-            <marker date="1459011425102" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1459011425102" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
-            <marker date="1459011425102" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1459011425102" expanded="true" signature="4286:4345" placeholder="SELECT borro... bookloan" />
+            <marker date="1459093907107" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
+            <marker date="1459093907107" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1459093907107" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1459093907107" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1459093907107" expanded="true" signature="4274:4333" placeholder="SELECT borro... bookloan" />
           </folding>
         </state>
       </provider>
@@ -952,15 +953,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="64" column="75" selection-start-line="64" selection-start-column="75" selection-end-line="64" selection-end-column="75" />
           <folding>
-            <marker date="1459011425102" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
-            <marker date="1459011425102" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1459011425102" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
-            <marker date="1459011425102" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1459011425102" expanded="true" signature="4286:4345" placeholder="SELECT borro... bookloan" />
+            <marker date="1459093907107" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
+            <marker date="1459093907107" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1459093907107" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1459093907107" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1459093907107" expanded="true" signature="4274:4333" placeholder="SELECT borro... bookloan" />
           </folding>
         </state>
       </provider>
@@ -1122,18 +1123,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/createDatabase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62886596">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.67525774">
+          <caret line="107" column="84" selection-start-line="107" selection-start-column="84" selection-end-line="107" selection-end-column="84" />
           <folding>
-            <marker date="1459011425102" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
-            <marker date="1459011425102" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
-            <marker date="1459011425102" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
-            <marker date="1459011425102" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
-            <marker date="1459011425102" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
-            <marker date="1459011425102" expanded="true" signature="4286:4345" placeholder="SELECT borro... bookloan" />
+            <marker date="1459093907107" expanded="true" signature="344:377" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="397:585" placeholder="CREATE TABLE... Book" />
+            <marker date="1459093907107" expanded="true" signature="945:982" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1003:1242" placeholder="CREATE TABLE... Borrower" />
+            <marker date="1459093907107" expanded="true" signature="1612:1649" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="1670:1973" placeholder="CREATE TABLE... BookLoan" />
+            <marker date="1459093907107" expanded="true" signature="2355:2393" placeholder="DROP TABLE I... " />
+            <marker date="1459093907107" expanded="true" signature="2418:2718" placeholder="CREATE TABLE... Book_copy" />
+            <marker date="1459093907107" expanded="true" signature="4274:4333" placeholder="SELECT borro... bookloan" />
           </folding>
         </state>
       </provider>
