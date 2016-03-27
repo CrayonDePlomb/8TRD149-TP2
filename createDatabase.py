@@ -2,22 +2,26 @@
 # -*- coding: utf-8 -*-
 import mysql.connector
 
+user = "root"
+password = "root678"
+database = "tp2db"
+
 def create():
 
 
-    db = mysql.connector.connect(user="root", database="tp2DB")
+    db = mysql.connector.connect(user=user, password=password, database=database)
 
     cur = db.cursor()
 
 
 
-    cur.execute("SET FOREIGN_KEY_CHECKS=0") # Il ne regarde plus les foreigh_key
+    cur.execute("SET FOREIGN_KEY_CHECKS=0") # Il ne regarde plus les foreign_key
 
 # CREATION TABLE BOOK
     cur.execute("DROP TABLE IF EXISTS Book Cascade")
     cur.execute("CREATE TABLE Book "
                 "(ISBN INT PRIMARY KEY NOT NULL, "
-                "title VARCHAR(255) NOT NULL,"
+                "title VARCHAR(255) UNIQUE NOT NULL,"
                 "year INT(4),"
                 "edition INT(2))")
 
@@ -67,7 +71,6 @@ def create():
                 "(borrowerNo, borrowerName, BorrowerAddress)")
     db.commit()
 
-
     print("Borrower est crée et remplir\n")
 
 # CREATION TABLE BOOKLOAN
@@ -87,12 +90,42 @@ def create():
         "ENCLOSED BY '\"'"\
         "LINES TERMINATED BY '\n'"\
         "(copyNo , dateOut, dateDue,borrowerNo)")
-
-    print("BookLoand est crée et remplir\n")
     db.commit()
 
+    print("BookLoan est crée et remplir\n")
+
+# CREATION TRIGGER BORROWER NOT LOANING MORE THAN 3 BOOKS
+    sql = "CREATE TRIGGER BorrowerNotHandlingTooMuch BEFORE INSERT ON BookLoan " \
+          "FOR EACH ROW " \
+          "BEGIN " \
+          "IF EXISTS (SELECT borrowerNo, COUNT(copyNo) AS nbOfCopy FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo GROUP BY borrowerNo HAVING  nbOfCopy > 3) " \
+          "AND "' . NEW.dateOut . '" BETWEEN "' . BookLoan.dateOut . '" AND "' . BookLoan.dateDue . '" " \
+          "THEN DELETE FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo; " \
+          "END IF; " \
+          "END; "
+
+    cur.execute(sql)
+    db.commit()
+
+    print("Ajout du Trigger BorrowerNotHandlingTooMuch\n")
+
+# CREATION TRIGGER BORROWER NOT LOANING BOOK UNVAILABLE AT DATE
+    sql = "CREATE TRIGGER BookLoanNotInDate BEFORE INSERT ON BookLoan " \
+          "FOR EACH ROW " \
+          "BEGIN " \
+          "IF EXISTS (SELECT * FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo) " \
+          "AND "' . NEW.dateOut . '" BETWEEN "' . BookLoan.dateOut . '" AND "' . BookLoan.dateDue . '" " \
+          "THEN DELETE FROM BookLoan WHERE BookLoan.borrowerNo = NEW.borrowerNo; " \
+          "END IF; "\
+          "END; "\
+
+    cur.execute(sql)
+    db.commit()
+
+    print("Ajout du Trigger BookLoanNotInDate\n")
 
     cur.execute("SET FOREIGN_KEY_CHECKS=1")
     db.close()
+
 
 

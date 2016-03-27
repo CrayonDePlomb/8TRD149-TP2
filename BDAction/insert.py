@@ -2,36 +2,38 @@ from datetime import date
 import datetime
 import mysql.connector
 
-
+user = "root"
+password = ""
+database = "tp2db"
 
 def ajouterLivre():
-    db = mysql.connector.connect(user="root", database="tp2DB")
-    cur = db.cursor()
+    db = mysql.connector.connect(user=user, password=password, database= database)
 
-    ISBNLivre = input("Entrez le ISBN:\n")
+    ISBNLivre = input("Entrez le ISBN (8 chiffres et 1er chiffre différent de 0):\n")
     livreTitre = input("Entrez le titre du livre:\n")
-    livreYear = input("Entrez l\'année du livre :\n")
-    livreEdition = input("Entrez l\'edition du livre\n")
+    livreYear = input("Entrez l\'année du livre (YYYY):\n")
+    livreEdition = input("Entrez l\'édition du livre (Au moins un chiffre):\n")
 
     sql = "INSERT INTO Book VALUES({0},\"{1}\",{2},{3});".format(ISBNLivre,livreTitre,livreYear,livreEdition)
 
     try:
+        cur = db.cursor()
         cur.execute(sql)
         print("Le nouveau livre a été ajouté.\n")
         db.commit()
+        print("L'opération a été effectué.\n")
 
     except:
         db.rollback()
+        print("L'opération a échoué.\n")
 
     db.close()
 
 def ajouterExemplaire():
-    db = mysql.connector.connect(user="root", database="tp2DB")
-    cur = db.cursor()
+    db = mysql.connector.connect(user=user, password=password, database= database)
 
     livreTitre = input("Entrer un titre de livre \n")
     sql = "INSERT INTO Book_copy(ISBN) VALUES(Select ISBN from Book where title= \"{0}\")".format(livreTitre)
-
 
     try:
         cur = db.cursor()
@@ -39,6 +41,7 @@ def ajouterExemplaire():
 
         print("L\'exemplaire a été ajouté\n")
         db.commit()
+
     except:
         db.rollback()
 
@@ -46,11 +49,10 @@ def ajouterExemplaire():
 
 
 def selectExemplaire():
-    db = mysql.connector.connect(user="root", database="tp2DB")
-    cur = db.cursor()
+    db = mysql.connector.connect(user=user, password=password, database= database)
 
     livreTitre = input("Entrer un titre de livre : \n")
-    sql = "Select copyNo from Book b ,Book_copy bc where b.ISBN = bc.ISBN and b.title = \"{0}\"".format(livreTitre)
+    sql = "SELECT copyNo FROM Book b ,Book_copy bc WHERE b.ISBN = bc.ISBN AND b.title = \"{0}\"".format(livreTitre)
     try:
         cur = db.cursor()
         cur.execute(sql)
@@ -72,7 +74,7 @@ def selectExemplaire():
 
 def ajouterMembre():
 
-    db = mysql.connector.connect(user="root", database="tp2DB")
+    db = mysql.connector.connect(user=user, password=password, database= database)
     cur = db.cursor()
 
     nomMembre = input("Entrez le nom:\n")
@@ -83,17 +85,17 @@ def ajouterMembre():
         print("L\'abonné a été ajouté\n")
 
         db.commit()
+        print("Ajout d\'un nouveau membre \n")
     except:
         db.rollback()
     db.close()
 
 
 def selectLivre():
-    db = mysql.connector.connect(user="root", database="tp2DB")
-    cur = db.cursor()
+    db = mysql.connector.connect(user=user, password=password, database= database)
 
     livreTitre = input("Entrer un titre de livre \n")
-    sql = "Select title from Book where title LIKE \"%{0}%\"".format(livreTitre)
+    sql = "SELECT title FROM Book WHERE title LIKE \"%{0}%\"".format(livreTitre)
     try:
         cur = db.cursor()
         cur.execute(sql)
@@ -111,12 +113,11 @@ def selectLivre():
     db.close()
 
 def rechercheSelonUnedate():
-    db = mysql.connector.connect(user="root", database="tp2DB")
-    cur = db.cursor()
+    db = mysql.connector.connect(user=user, password=password, database= database)
     uneDate = input("Veuillez entrer une date pour vérifier si le livre est disponible(YYYY-MM-DD)\n")
 
-    sql = "SELECT b.title,b.year FROM BookLoan bl,Book_copy bc,Book b where bl.dateOut < \'{0}\' " \
-          "AND bl.datedue > \'{0}\' and bl.copyNo = bc.copyNo and bc.ISBN= b.ISBN".format(uneDate)
+    sql = "SELECT b.title,b.year FROM BookLoan bl,Book_copy bc,Book b WHERE bl.dateOut < \'{0}\' " \
+          "AND bl.datedue > \'{0}\' AND bl.copyNo = bc.copyNo AND bc.ISBN= b.ISBN".format(uneDate)
 
     try:
         cur = db.cursor()
@@ -134,12 +135,11 @@ def rechercheSelonUnedate():
     db.close()
 
 def ajouterEmprunt():
-    db = mysql.connector.connect(user="root", database="tp2DB")
-    cur = db.cursor()
+    db = mysql.connector.connect(user=user, password=password, database= database)
 
     nomAbonne = input("Entrer le nom de l\'abonné: \n")
     titreLivre = input("Entrer le titre du livre à emprunter: \n")
-    dateInput = input("Entrer la date de sortie de l\'emprunt: \n")
+    dateInput = input("Entrer la date de sortie de l\'emprunt: (YYYY-MM-DD) \n")
     dateInputConvertie = datetime.datetime.strptime(dateInput, "%Y-%m-%d")
     dateOutputConvertie = dateInputConvertie + datetime.timedelta(days=14)
 
@@ -147,10 +147,13 @@ def ajouterEmprunt():
          "\"{0}\" AND bc.available=TRUE ORDER BY bc.copyNo LIMIT 1), \'{1}\', \'{2}\',(SELECT borrowerNo FROM borrower WHERE borrowerName =" \
          " \"{3}\"))".format(titreLivre, dateInputConvertie.strftime("%Y-%m-%d"), dateOutputConvertie.strftime("%Y-%m-%d"), nomAbonne)
     try:
+        cur = db.cursor()
         cur.execute(sql)
         print("Le nouvel emprunt a été ajouté: \n")
 
         db.commit()
+        print("Le nouvel emprunt a été ajouté: \n")
+
     except:
         print("Le titre du livre ou l'abonné n'existe pas dans la bd")
     db.close()
