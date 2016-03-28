@@ -3,9 +3,10 @@ import datetime
 import mysql.connector
 
 user = "root"
-password = "root678"
+password = ""
 database = "tp2db"
 
+#AJOUT D'UN LIVRE
 def ajouterLivre():
     db = mysql.connector.connect(user=user, password=password, database= database)
 
@@ -21,19 +22,20 @@ def ajouterLivre():
         cur.execute(sql)
         print("Le nouveau livre a été ajouté.\n")
         db.commit()
-        print("L'opération a été effectué.\n")
 
     except:
         db.rollback()
-        print("L'opération a échoué.\n")
+        print("\n /!\ L'opération a échoué. /!\ \n")
 
     db.close()
 
+
+#AJOUT D'UN EXEMPLAIRE
 def ajouterExemplaire():
     db = mysql.connector.connect(user=user, password=password, database= database)
 
     livreTitre = input("Entrer un titre de livre \n")
-    sql = "INSERT INTO Book_copy(ISBN) VALUES(Select ISBN from Book where title= \"{0}\")".format(livreTitre)
+    sql = "INSERT INTO Book_copy(ISBN) SELECT ISBN FROM Book WHERE title= \"{0}\"".format(livreTitre)
 
     try:
         cur = db.cursor()
@@ -44,10 +46,12 @@ def ajouterExemplaire():
 
     except:
         db.rollback()
+        print("\n /!\ L'opération a échoué. /!\ \n")
 
     db.close()
 
 
+#RECHERCHE DES EXEMPLAIRES D'UN LIVRE
 def selectExemplaire():
     db = mysql.connector.connect(user=user, password=password, database= database)
 
@@ -65,13 +69,15 @@ def selectExemplaire():
 
         print("La recherche d\'exemplaire est terminée \n")
         db.commit()
+
     except:
         db.rollback()
+        print("\n /!\ L'opération a échoué. /!\ \n")
+
     db.close()
 
 
-
-
+#AJOUT D'UN MEMBRE
 def ajouterMembre():
 
     db = mysql.connector.connect(user=user, password=password, database= database)
@@ -82,15 +88,17 @@ def ajouterMembre():
     sql = "INSERT INTO Borrower(borrowerName, borrowerAddress) VALUES (\"{0}\",\"{1}\")".format(nomMembre,adresseMembre)
     try:
         cur.execute(sql)
-        print("L\'abonné a été ajouté\n")
 
+        print("L\'abonné a été ajouté\n")
         db.commit()
-        print("Ajout d\'un nouveau membre \n")
+
     except:
         db.rollback()
+        print("\n /!\ L'opération a échoué. /!\ \n")
+
     db.close()
 
-
+#RECHERCHE D'UN LIVRE SELON PATRON
 def selectLivre():
     db = mysql.connector.connect(user=user, password=password, database= database)
 
@@ -108,15 +116,20 @@ def selectLivre():
 
         print("Le patron de recherche est terminé \n")
         db.commit()
+
     except:
         db.rollback()
+        print("\n /!\ L'opération a échoué. /!\ \n")
+
     db.close()
 
+
+#RECHERCHE DISPONIBILITE D'UN LIVRE SELON UNE DATE
 def rechercheSelonUnedate():
     db = mysql.connector.connect(user=user, password=password, database= database)
     uneDate = input("Veuillez entrer une date pour vérifier si le livre est disponible(YYYY-MM-DD)\n")
 
-    sql = "SELECT b.title,b.year FROM BookLoan bl,Book_copy bc,Book b WHERE bl.dateOut < \'{0}\' " \
+    sql = "SELECT b.title,b.year FROM BookLoan bl,Book_copy bc,Book b WHERE bl.dateOut <= \'{0}\' " \
           "AND bl.datedue > \'{0}\' AND bl.copyNo = bc.copyNo AND bc.ISBN= b.ISBN".format(uneDate)
 
     try:
@@ -129,11 +142,17 @@ def rechercheSelonUnedate():
             year = row[1]
             print("Titre : {0} et l\'année: {1}".format(title,year))
 
+        print("Le patron de recherche est terminé \n")
         db.commit()
+
     except:
         db.rollback()
+        print("\n /!\ L'opération a échoué. /!\ \n")
+
     db.close()
 
+
+#AJOUT D'UN EMPRUNT
 def ajouterEmprunt():
     db = mysql.connector.connect(user=user, password=password, database= database)
 
@@ -151,11 +170,12 @@ def ajouterEmprunt():
         cur.execute(sql)
 
         db.commit()
-        print("Le nouvel emprunt a été ajouté: \n")
+        print("Le nouvel emprunt a été ajouté. \n")
 
     except:
         db.rollback()
-        print("Le titre du livre ou l'abonné n'existe pas dans la bd")
+        print("\n /!\ L'opération a échoué. /!\ \n")
+
     db.close()
 
 
